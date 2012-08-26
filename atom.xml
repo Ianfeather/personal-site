@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Ian Feather]]></title>
-  <link href="http://ianfeather.co.uk/atom.xml" rel="self"/>
-  <link href="http://ianfeather.co.uk/"/>
-  <updated>2012-08-26T18:12:22+01:00</updated>
-  <id>http://ianfeather.co.uk/</id>
+  <link href="http://Ianfeather.github.com/ianfeatherV3/atom.xml" rel="self"/>
+  <link href="http://Ianfeather.github.com/ianfeatherV3/"/>
+  <updated>2012-08-26T18:31:41+01:00</updated>
+  <id>http://Ianfeather.github.com/ianfeatherV3/</id>
   <author>
     <name><![CDATA[Ian Feather]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[The Neglected Medium: Can we replicate creative communication online?]]></title>
-    <link href="http://ianfeather.co.uk/blog/the-neglected-medium-can-we-replicate-creative-communication-online/"/>
+    <link href="http://Ianfeather.github.com/ianfeatherV3/blog/the-neglected-medium-can-we-replicate-creative-communication-online/"/>
     <updated>2012-06-04T15:17:00+01:00</updated>
-    <id>http://ianfeather.co.uk/blog/the-neglected-medium-can-we-replicate-creative-communication-online</id>
+    <id>http://Ianfeather.github.com/ianfeatherV3/blog/the-neglected-medium-can-we-replicate-creative-communication-online</id>
     <content type="html"><![CDATA[<p>The smoke hung to the ceiling, the smokiness of the whisky clung to the back of our throats. The comfort of the walls liberated our expression. We were conspiring, and madness dared to precede us.</p>
 
 <p>Conspiring on change, deliberating on decision, gathering our thoughts for the future of the web: as we could each see it. Tongues flew fast on the back of ideas and tangents. We bounced from process to product, from theory to theatre and concepts had their potential amplified by each discourse.</p>
@@ -30,9 +30,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hangover Hack Result]]></title>
-    <link href="http://ianfeather.co.uk/blog/hangover-hack-result/"/>
+    <link href="http://Ianfeather.github.com/ianfeatherV3/blog/hangover-hack-result/"/>
     <updated>2012-03-24T15:17:00+00:00</updated>
-    <id>http://ianfeather.co.uk/blog/hangover-hack-result</id>
+    <id>http://Ianfeather.github.com/ianfeatherV3/blog/hangover-hack-result</id>
     <content type="html"><![CDATA[<ul class="ext-links">
     <li><a class="btn btn-external btn-photo" href="http://ianfeather.co.uk/playground/image-play/">The end result</a></li>
     <li><a class="btn btn-external btn-github" href="https://github.com/Ianfeather/image-play">The source code</a></li>
@@ -76,9 +76,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hangover Hack]]></title>
-    <link href="http://ianfeather.co.uk/blog/hangover-hack/"/>
+    <link href="http://Ianfeather.github.com/ianfeatherV3/blog/hangover-hack/"/>
     <updated>2012-03-17T15:16:00+00:00</updated>
-    <id>http://ianfeather.co.uk/blog/hangover-hack</id>
+    <id>http://Ianfeather.github.com/ianfeatherV3/blog/hangover-hack</id>
     <content type="html"><![CDATA[<p>I&#8217;m hungover, on crutches and my girlfriend is at work. I have loads of client work to deal with and by rights that is what today should involve but instead I&#8217;m going to do something different, something I rarely do.</p>
 
 <p>I&#8217;m going to make something <em>FUN</em>.</p>
@@ -93,9 +93,9 @@
   
   <entry>
     <title type="html"><![CDATA[A Cheat Sheet for the Terminal-Averse]]></title>
-    <link href="http://ianfeather.co.uk/blog/a-cheat-sheet-for-the-terminal-averse/"/>
+    <link href="http://Ianfeather.github.com/ianfeatherV3/blog/a-cheat-sheet-for-the-terminal-averse/"/>
     <updated>2012-02-14T15:16:00+00:00</updated>
-    <id>http://ianfeather.co.uk/blog/a-cheat-sheet-for-the-terminal-averse</id>
+    <id>http://Ianfeather.github.com/ianfeatherV3/blog/a-cheat-sheet-for-the-terminal-averse</id>
     <content type="html"><![CDATA[<p>Did you know there&#8217;s a cheat sheet you can build into Terminal? It&#8217;s one that allows you to run complex git commands and change directories just by hitting a couple of keys. The best part is they&#8217;re keys that you define for yourself.</p>
 
 <p>If you&#8217;re a designer/front end developer who is wary and resistant to the growing impetus of the command line then you&#8217;re in luck.</p>
@@ -154,9 +154,9 @@ Would allow you to open up a file in iA Writer by running: ia myfile.md</li>
   
   <entry>
     <title type="html"><![CDATA[Why Online Brand Personality Matters Today]]></title>
-    <link href="http://ianfeather.co.uk/blog/why-online-brand-personality-matters-today/"/>
+    <link href="http://Ianfeather.github.com/ianfeatherV3/blog/why-online-brand-personality-matters-today/"/>
     <updated>2011-10-10T15:15:00+01:00</updated>
-    <id>http://ianfeather.co.uk/blog/why-online-brand-personality-matters-today</id>
+    <id>http://Ianfeather.github.com/ianfeatherV3/blog/why-online-brand-personality-matters-today</id>
     <content type="html"><![CDATA[<p>I&#8217;m constantly impressed by businesses who are switched on to the growing impact social media is having on our day to day decisions. Before we commit to anything, be it buying a watch or choosing a restaurant, there is a high chance that we have used the internet to qualify it to ourselves. Right now, that may be Google but in the future every restaurant, boutique shop, airline and fish and chip van will have been qualified using social media - whether they know it or not.</p>
 
 <p>And if you think the above examples were chosen at random: realise that companies in those extraordinarily diverse sectors are not just recognising the value of social media but thoroughly embracing it. See <a href="http://twitter.com/#!/BrixtonVillage">@brixtonvillage</a>, <a href="http://twitter.com/#!/klm">@klm</a> and <a href="http://twitter.com/#!/NoFishyBusiness">@nofishybusiness</a> for some stunning examples.</p>
@@ -188,9 +188,9 @@ Would allow you to open up a file in iA Writer by running: ia myfile.md</li>
   
   <entry>
     <title type="html"><![CDATA[There are no Web Experts]]></title>
-    <link href="http://ianfeather.co.uk/blog/there-are-no-web-experts/"/>
+    <link href="http://Ianfeather.github.com/ianfeatherV3/blog/there-are-no-web-experts/"/>
     <updated>2011-07-18T15:12:00+01:00</updated>
-    <id>http://ianfeather.co.uk/blog/there-are-no-web-experts</id>
+    <id>http://Ianfeather.github.com/ianfeatherV3/blog/there-are-no-web-experts</id>
     <content type="html"><![CDATA[<p>In our ever changing industry we have at least one truth: there are no experts. Sure, in our midst are industry leaders, consultants, even the odd guru, but it must be remembered that no one has all the answers. For every good link, there are ten bad ones. For every insightful tweet there are a hundred misleading ones (not to mention a million mentioning iPads). And in the time between <a href="http://www.alistapart.com" title="A List Apart">alistapart</a> articles, there are maybe a thousand new individuals entering our industry who are learning from antiquated sources.</p>
 
 <p>During my time in the web industry I have already seen a change in attitudes towards this way of thinking. Early on I found opinion-driven rants permeated by hyperbolic advice all presented in absolute terms. There was no area for discussion. There was simply a right way and a thousand wrong ways.</p>
