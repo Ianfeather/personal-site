@@ -1,0 +1,36 @@
+.sidebar
+  @extend %red-text
+
+.main-header
+  margin-bottom: 50px
+
+nav ul, .sidebar ul
+  @extend %no-list-style
+  @extend %no-margin-or-padding
+
+
+%navigation-item
+  +border-radius(100px)
+  @extend %margin-bottom-10
+  border: 2px solid $very-light-blue
+
+.nav
+  margin-bottom: 30px
+
+.nav-item
+  @extend %regular-type
+  @extend %navigation-item
+  width: 80%
+  padding: 10px
+  +style-placeholder
+    color: $main-blue
+
+.ext-twitter
+  @extend %navigation-item
+  @extend %image-replacement
+  @extend %round-link
+
+.ext-github
+  @extend %navigation-item
+  @extend %image-replacement
+  @extend %round-link
