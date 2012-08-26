@@ -1,0 +1,15 @@
+.archive-container article
+  @extend %relative
+  padding: 0 10px 40px 10px
+  border-bottom: 2px solid #90bee9
+  margin-top: 40px
+
+.entry-date
+  @extend %absolute-top
+  right: 10px
+
+.archive-container article:nth-child(1)
+  @extend %no-margin-bottom
+
+.archive-container article:nth-last-child(1)
+  @extend %no-border-bottom

@@ -1,0 +1,54 @@
+.main-footer
+  @extend %dark-background
+  @extend %blue-border
+  background-color: $main-blue
+  padding: 30px 10px 0
+
+.socialMedia
+  @extend .is-hidden
+
+.footerContainer h5
+  @extend %dark-background
+  @extend %huge-type
+  text-transform: none
+  letter-spacing: 0
+  margin-bottom: 5px
+
+.footerContainer h6
+  @extend %smaller-type
+  color: $blue-on-dark-bg
+  margin-bottom: 1em
+
+.footerContainer p
+  @extend %smaller-type
+  line-height: 22px
+
+.socialLinks ul
+  @extend %no-list-style
+  @extend %no-margin-or-padding
+
+.socialLinks li
+  @extend %float-left
+  @extend %extra-large-type
+  @extend %blue-text
+  margin: 0 20px 10px 0
+
+.socialLinks li:before
+  content: '- '
+
+.socialLinks li a
+  @extend %blue-text
+
+.socialLinks li a:hover
+  @extend %red-text
+
+.socialLinks span
+  @extend %smaller-type
+  font-style: italic
+
+.bio .socialLinks li,
+.bio .socialLinks a
+  @extend %dark-background
+
+.bio .socialLinks a:hover
+  color: #444

@@ -1,0 +1,37 @@
+.sidebar ul
+  @extend %no-list-style
+  margin-left: -24px
+
+.sidebar .widget-container
+  padding: 20px 0
+
+.sidebar .widget-container:nth-child(1)
+  @extend %no-padding-top
+
+#searchform
+  padding: 10px
+  border-top: 1px solid #A8CEF1
+  border-bottom: 1px solid #A8CEF1
+
+#searchform input
+  @extend %rounded-corners
+  display: inline
+  width: 65%
+  border: 1px solid $light-blue
+  color: #666
+  margin: 10px 0
+  outline: none
+
+#searchform input#searchsubmit
+  @extend %uppercase-text
+  @extend %smaller-type
+  width: 30%
+  margin-left: 3%
+  background-color: $light-blue
+  color: #285a8a
+  text-shadow: rgba(255, 255, 255, 0.2) 0px 1px 0px
+  height: 40px
+  letter-spacing: 0.07em
+
+#recent-posts-2, #archives-2, #recent-comments-2, #categories-2, #meta-2
+  @extend .is-hidden

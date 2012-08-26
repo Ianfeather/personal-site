@@ -1,0 +1,98 @@
+/**** CForm Reset ***
+form
+  @extend %full-width
+
+form ol, form ul
+  @extend %no-list-style
+  @extend %no-margin-or-padding
+
+form li, form p
+  @extend %clearfix
+
+legend, .linklove
+  display: none !important
+
+/*** Comments Reset ***
+
+/* When logged in
+#respond a
+  @extend %tiny-type
+
+#respond .logged-in-as a
+  @extend %regular-type
+
+h3#reply-title small
+  margin-left: 10px
+
+.form-allowed-tags
+  @extend .is-hidden
+
+/* Add micro clearfix to #respond because we can't get to the markup
+#respond
+  @extend %clearfix
+
+
+/**** Generic Form Elements ***
+
+label
+  cursor: pointer
+
+input
+  +vertically-center(40px)
+  padding: 0 10px
+
+textarea
+  line-height: 1.6
+  padding: 10px
+  height: 150px
+
+input, textarea
+  @extend %full-width
+  @extend %rounded-corners
+  @extend %smaller-type
+  @extend %no-float
+  border: 1px solid $light-blue
+  color: #666
+  margin-bottom: 10px
+  outline: none
+
+input:focus, textarea:focus
+  @extend %blue-text
+
+input[type="submit"]
+  +text-shadow(0px 1px 0px rgba(255, 255, 255, 0.2))
+  @extend %uppercase-text
+  background-color: $light-blue
+  color: #285a8a
+  letter-spacing: 0.07em
+  cursor: pointer
+
+input[type="submit"]:active
+  @extend %relative
+  top: 1px
+
+select
+  display: block
+  @extend %margin-bottom-10
+
+/* Contact Page
+.cform li
+  margin-bottom: 15px
+
+.emailreqtxt, .reqtxt
+  @extend .is-hidden
+
+#tabs-1 textarea
+  @extend %no-padding-bottom
+  height: 100px
+
+.cform
+  @extend %margin-top-30
+
+/* Comments Form
+
+.required
+  @extend %blue-text
+
+.comment-notes
+  @extend %margin-bottom-30
