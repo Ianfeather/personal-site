@@ -1,142 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Ian Feather</title>
-  <meta name="author" content="Ian Feather">
-
-  
-  <meta name="description" content="The smoke hung to the ceiling, the smokiness of the whisky clung to the back of our throats. The comfort of the walls liberated our expression. We &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://ianfeather.co.uk/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script type="text/javascript" src="//use.typekit.net/dhw7slp.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="Ian Feather" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-
-</head>
-
-
-<body   >
-
-  <section class="main-content" role="main">
-
-
-
-    <div id="content" class="grid-3">
-      <header role="banner" class="col-1 main-header"><hgroup>
-  <h1><a href="/">Ian Feather</a></h1>
-  
-    <h2>Sass, coffeescript &amp; literature</h2>
-  
-</hgroup>
-<a href="https://twitter.com/ianfeather" class="ext-twitter">@ianfeather on twitter</a>
-<a href="https://github.com/Ianfeather" class="ext-github">@ianfeather on github</a>
-
-
-</header>
-
-      <div class="col-2 blog-index">
-  
-  
-  
-    <article>
-      
-
-  <header>
+  <title><![CDATA[Ian Feather]]></title>
+  <link href="http://ianfeather.co.uk/atom.xml" rel="self"/>
+  <link href="http://ianfeather.co.uk/"/>
+  <updated>2012-08-26T18:12:22+01:00</updated>
+  <id>http://ianfeather.co.uk/</id>
+  <author>
+    <name><![CDATA[Ian Feather]]></name>
     
-      <h1 class="title"><a href="/blog/the-neglected-medium-can-we-replicate-creative-communication-online/">The Neglected Medium: Can We Replicate Creative Communication Online?</a></h1>
-    
-
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-
-
-<time datetime="2012-06-04T15:17:00+01:00" pubdate data-updated="true">Jun 4<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-
-
-  <div class="entry-content"><p>The smoke hung to the ceiling, the smokiness of the whisky clung to the back of our throats. The comfort of the walls liberated our expression. We were conspiring, and madness dared to precede us.</p>
+  <entry>
+    <title type="html"><![CDATA[The Neglected Medium: Can we replicate creative communication online?]]></title>
+    <link href="http://ianfeather.co.uk/blog/the-neglected-medium-can-we-replicate-creative-communication-online/"/>
+    <updated>2012-06-04T15:17:00+01:00</updated>
+    <id>http://ianfeather.co.uk/blog/the-neglected-medium-can-we-replicate-creative-communication-online</id>
+    <content type="html"><![CDATA[<p>The smoke hung to the ceiling, the smokiness of the whisky clung to the back of our throats. The comfort of the walls liberated our expression. We were conspiring, and madness dared to precede us.</p>
 
 <p>Conspiring on change, deliberating on decision, gathering our thoughts for the future of the web: as we could each see it. Tongues flew fast on the back of ideas and tangents. We bounced from process to product, from theory to theatre and concepts had their potential amplified by each discourse.</p>
 
 <p>Some of us sat up, stood, paced, drew wildly on the walls. Others stared at the floor and shook their heads, looking up to interject in the vein of &#8216;Exactly!&#8217;, &#8216;Tell that to the world&#8217; or &#8216;Pass me the bottle&#8217;.</p>
 
 <p>Can we ever recreate this fast flowing and fluid communication through a remote medium? Do remote teams suffer as a consequence?</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-
-  <header>
-    
-      <h1 class="title"><a href="/blog/hangover-hack-result/">Hangover Hack Result</a></h1>
-    
-
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-24T15:17:00+00:00" pubdate data-updated="true">Mar 24<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-
-
-  <div class="entry-content"><ul class="ext-links">
+  <entry>
+    <title type="html"><![CDATA[Hangover Hack Result]]></title>
+    <link href="http://ianfeather.co.uk/blog/hangover-hack-result/"/>
+    <updated>2012-03-24T15:17:00+00:00</updated>
+    <id>http://ianfeather.co.uk/blog/hangover-hack-result</id>
+    <content type="html"><![CDATA[<ul class="ext-links">
     <li><a class="btn btn-external btn-photo" href="http://ianfeather.co.uk/playground/image-play/">The end result</a></li>
     <li><a class="btn btn-external btn-github" href="https://github.com/Ianfeather/image-play">The source code</a></li>
 </ul>
@@ -174,46 +71,15 @@
 <p>It took around 6 hours to make, although I split that time with 6 nations rugby, but if I had had more time I&#8217;d build in instagram support and add the ability to switch back and forth between the two modes more easily.</p>
 
 <p>Maybe I&#8217;ll add that in the future but it&#8217;s more likely I&#8217;ll just build something new. Either way, in the future, I&#8217;ll definitely be building something just for the sake of it.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-
-  <header>
-    
-      <h1 class="title"><a href="/blog/hangover-hack/">Hangover Hack</a></h1>
-    
-
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-17T15:16:00+00:00" pubdate data-updated="true">Mar 17<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-
-
-  <div class="entry-content"><p>I&#8217;m hungover, on crutches and my girlfriend is at work. I have loads of client work to deal with and by rights that is what today should involve but instead I&#8217;m going to do something different, something I rarely do.</p>
+  <entry>
+    <title type="html"><![CDATA[Hangover Hack]]></title>
+    <link href="http://ianfeather.co.uk/blog/hangover-hack/"/>
+    <updated>2012-03-17T15:16:00+00:00</updated>
+    <id>http://ianfeather.co.uk/blog/hangover-hack</id>
+    <content type="html"><![CDATA[<p>I&#8217;m hungover, on crutches and my girlfriend is at work. I have loads of client work to deal with and by rights that is what today should involve but instead I&#8217;m going to do something different, something I rarely do.</p>
 
 <p>I&#8217;m going to make something <em>FUN</em>.</p>
 
@@ -222,46 +88,15 @@
 <p>The six nations is on tv and I&#8217;ve got a cup of tea on the go. Hopefully writing this will mean that I actually do it rather than getting caught up in other bits.</p>
 
 <p>Ps. Sorry to my clients in advance.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-
-  <header>
-    
-      <h1 class="title"><a href="/blog/a-cheat-sheet-for-the-terminal-averse/">A Cheat Sheet for the Terminal-Averse</a></h1>
-    
-
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-14T15:16:00+00:00" pubdate data-updated="true">Feb 14<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-
-
-  <div class="entry-content"><p>Did you know there&#8217;s a cheat sheet you can build into Terminal? It&#8217;s one that allows you to run complex git commands and change directories just by hitting a couple of keys. The best part is they&#8217;re keys that you define for yourself.</p>
+  <entry>
+    <title type="html"><![CDATA[A Cheat Sheet for the Terminal-Averse]]></title>
+    <link href="http://ianfeather.co.uk/blog/a-cheat-sheet-for-the-terminal-averse/"/>
+    <updated>2012-02-14T15:16:00+00:00</updated>
+    <id>http://ianfeather.co.uk/blog/a-cheat-sheet-for-the-terminal-averse</id>
+    <content type="html"><![CDATA[<p>Did you know there&#8217;s a cheat sheet you can build into Terminal? It&#8217;s one that allows you to run complex git commands and change directories just by hitting a couple of keys. The best part is they&#8217;re keys that you define for yourself.</p>
 
 <p>If you&#8217;re a designer/front end developer who is wary and resistant to the growing impetus of the command line then you&#8217;re in luck.</p>
 
@@ -314,46 +149,15 @@ Would allow you to open up a file in iA Writer by running: ia myfile.md</li>
 <p>By defining rules around my most common workflow routines I&#8217;ve been able to improve productivity whilst also taming an area that was previously foreign territory.</p>
 
 <p>Give it a whirl. Any questions, I&#8217;ll do my best to help.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-
-  <header>
-    
-      <h1 class="title"><a href="/blog/why-online-brand-personality-matters-today/">Why Online Brand Personality Matters Today</a></h1>
-    
-
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-10-10T15:15:00+01:00" pubdate data-updated="true">Oct 10<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-
-
-  <div class="entry-content"><p>I&#8217;m constantly impressed by businesses who are switched on to the growing impact social media is having on our day to day decisions. Before we commit to anything, be it buying a watch or choosing a restaurant, there is a high chance that we have used the internet to qualify it to ourselves. Right now, that may be Google but in the future every restaurant, boutique shop, airline and fish and chip van will have been qualified using social media - whether they know it or not.</p>
+  <entry>
+    <title type="html"><![CDATA[Why Online Brand Personality Matters Today]]></title>
+    <link href="http://ianfeather.co.uk/blog/why-online-brand-personality-matters-today/"/>
+    <updated>2011-10-10T15:15:00+01:00</updated>
+    <id>http://ianfeather.co.uk/blog/why-online-brand-personality-matters-today</id>
+    <content type="html"><![CDATA[<p>I&#8217;m constantly impressed by businesses who are switched on to the growing impact social media is having on our day to day decisions. Before we commit to anything, be it buying a watch or choosing a restaurant, there is a high chance that we have used the internet to qualify it to ourselves. Right now, that may be Google but in the future every restaurant, boutique shop, airline and fish and chip van will have been qualified using social media - whether they know it or not.</p>
 
 <p>And if you think the above examples were chosen at random: realise that companies in those extraordinarily diverse sectors are not just recognising the value of social media but thoroughly embracing it. See <a href="http://twitter.com/#!/BrixtonVillage">@brixtonvillage</a>, <a href="http://twitter.com/#!/klm">@klm</a> and <a href="http://twitter.com/#!/NoFishyBusiness">@nofishybusiness</a> for some stunning examples.</p>
 
@@ -379,46 +183,15 @@ Would allow you to open up a file in iA Writer by running: ia myfile.md</li>
 
 
 <p>The consumer-digital world has a lot to look forward to.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-
-  <header>
-    
-      <h1 class="title"><a href="/blog/there-are-no-web-experts/">There Are No Web Experts</a></h1>
-    
-
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-18T15:12:00+01:00" pubdate data-updated="true">Jul 18<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-
-
-  <div class="entry-content"><p>In our ever changing industry we have at least one truth: there are no experts. Sure, in our midst are industry leaders, consultants, even the odd guru, but it must be remembered that no one has all the answers. For every good link, there are ten bad ones. For every insightful tweet there are a hundred misleading ones (not to mention a million mentioning iPads). And in the time between <a href="http://www.alistapart.com" title="A List Apart">alistapart</a> articles, there are maybe a thousand new individuals entering our industry who are learning from antiquated sources.</p>
+  <entry>
+    <title type="html"><![CDATA[There are no Web Experts]]></title>
+    <link href="http://ianfeather.co.uk/blog/there-are-no-web-experts/"/>
+    <updated>2011-07-18T15:12:00+01:00</updated>
+    <id>http://ianfeather.co.uk/blog/there-are-no-web-experts</id>
+    <content type="html"><![CDATA[<p>In our ever changing industry we have at least one truth: there are no experts. Sure, in our midst are industry leaders, consultants, even the odd guru, but it must be remembered that no one has all the answers. For every good link, there are ten bad ones. For every insightful tweet there are a hundred misleading ones (not to mention a million mentioning iPads). And in the time between <a href="http://www.alistapart.com" title="A List Apart">alistapart</a> articles, there are maybe a thousand new individuals entering our industry who are learning from antiquated sources.</p>
 
 <p>During my time in the web industry I have already seen a change in attitudes towards this way of thinking. Early on I found opinion-driven rants permeated by hyperbolic advice all presented in absolute terms. There was no area for discussion. There was simply a right way and a thousand wrong ways.</p>
 
@@ -449,88 +222,7 @@ Would allow you to open up a file in iA Writer by running: ia myfile.md</li>
 
 <p><a href="http://csswizardry.com/web-design+/" title="Web Design Plus">http://csswizardry.com/web-design+/</a> via @csswizardry
 <a href="http://taitems.github.com/Front-End-Development-Guidelines/" title="Taitems Front End Development Guidelines">http://taitems.github.com/Front-End-Development-Guidelines/</a> via @taitems</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-
-
-      
-        <aside class="col-1 sidebar">
-
-          
-            <section>
-  <h1>Other Posts</h1>
-  <ul id="js-recent-posts">
-    
-      <li class="post">
-        <a href="/blog/the-neglected-medium-can-we-replicate-creative-communication-online/">The Neglected Medium: Can we replicate creative communication online?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/hangover-hack-result/">Hangover Hack Result</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/hangover-hack/">Hangover Hack</a>
-      </li>
-    
-    <li><a href="/blog/archives">View all</a></li>
-  </ul>
-</section>
-
-
-
-
-
-
-          
-        </aside>
-      
-    </div>
-
-    
-
-  </section>
-
-  <footer class="main-footer" role="contentinfo"><p>
-  Copyright &copy; 2012 - Ian Feather -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-
-  
-
-
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
-
-</html>
+</feed>
