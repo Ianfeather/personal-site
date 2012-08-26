@@ -5,9 +5,6 @@ html
   overflow-y: scroll
   border-top: 10px solid $main-blue
 
-body
-  // max-width: 320px
-
 .main-content
   padding: 0 10px
 
@@ -29,38 +26,21 @@ h1, h2, h3, h4, h5, h6,
   margin-bottom: 0.75em
 
 h1, .h1
-  @extend %full-width
-  @extend %center-align-text
-  @extend %huge-type
-  @extend %margin-top-20
-  padding: 0 0 10px 0
+  @extend %extra-large-type
 
 h2, .h2,
 h3, .h3
   @extend %large-type
 
-h2, .h2
-  @extend %full-width
-
-h3, .h3
-  line-height: 1.3
-  margin-top: 50px
-
-h4, .h4
-  line-height: 1.25
-
 h5, .h5
   @extend %uppercase-text
   letter-spacing: 0.1em
-
-h6, .h6
-  @extend %small-type
 
 /****************************************************** 3.TYPOGRAPHY
 
 p, ol, ul, dl, address
   +hyphens()
-  margin-bottom: 15px
+  @extend %margin-bottom-20
   line-height: 28px
 
 blockquote
@@ -82,7 +62,7 @@ a:hover
 .ext-links
   @extend %no-list-style
   @extend %no-padding
-  margin: 0 0 30px 0
+  @extend %margin-bottom-30
 
 .ext-links li
   @extend %inline-block

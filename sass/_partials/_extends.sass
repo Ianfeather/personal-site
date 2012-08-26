@@ -46,11 +46,16 @@
 %blue-border
   border-top: 2px solid $main-blue
 
-%nav-type
-  +font-size(13)
-  
-@mixin portfolioRound()
-  -webkit-border-radius: 110px
-  -moz-border-radius: 50%
-  -o-border-radius: 50%
-  border-radius: 50%
+%round-link
+  width: 40px
+  height: 40px
+
+%external-link
+  display: block
+  position: relative
+  text-indent: 40px
+  &:before
+    @extend %empty-absolute-generated-content
+    width: 40px
+    height: 20px
+    background-color: red
