@@ -476,6 +476,7 @@ img {
 }
 
 .nav {
+  font-size: 1em;
   margin-bottom: 30px;
 }
 
@@ -488,6 +489,22 @@ img {
 }
 .nav-item:-moz-placeholder {
   color: #5696d1;
+}
+
+.ext-twitter, .ext-github {
+  background-image: url(../images/git-twit-sprite.svg);
+  -webkit-background-size: 2.3em;
+  -moz-background-size: 2.3em;
+  -o-background-size: 2.3em;
+  background-size: 2.3em;
+}
+
+.ext-twitter {
+  background-position: 0 -1.8em;
+}
+
+.ext-github {
+  background-position: 0 0.2em;
 }
 
 @media print {
