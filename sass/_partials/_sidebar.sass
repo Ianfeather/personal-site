@@ -15,6 +15,7 @@ nav ul, .sidebar ul
   border: 2px solid $very-light-blue
 
 .nav
+  font-size: 1em
   margin-bottom: 30px
 
 .nav-item
@@ -25,12 +26,22 @@ nav ul, .sidebar ul
   +style-placeholder
     color: $main-blue
 
+%svg-background
+  background-image: url(../images/git-twit-sprite.svg)
+  +background-size(2.3em)
+
+
 .ext-twitter
   @extend %navigation-item
   @extend %image-replacement
   @extend %round-link
+  @extend %svg-background
+  background-position: 0 -1.8em
+  
 
 .ext-github
   @extend %navigation-item
   @extend %image-replacement
   @extend %round-link
+  @extend %svg-background
+  background-position: 0 0.2em
