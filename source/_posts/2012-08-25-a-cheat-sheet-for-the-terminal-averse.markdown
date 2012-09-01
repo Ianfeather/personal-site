@@ -17,32 +17,32 @@ If you're a designer/front end developer who is wary and resistant to the growin
 	<li>Fire up terminal</li>
 	<li>Open your local version of bash_profile
 
-<code>mate ~/.bash_profile</code>
+<pre><code>mate ~/.bash_profile</code></pre>
 
 Add a link to your local aliases file by adding this line at the bottom of the file
 
-<code>source ~/.bash/aliases</code>
+<pre><code>source ~/.bash/aliases</code></pre>
 
 Now, save and close</li>
 	<li>Navigate to your local bash folder
 
-<code>cd ~/.bash</code>
+<pre><code>cd ~/.bash</code></pre>
 
 If the above command yields a 'directory does not exist' error, create this directory by running
 
-<code>mkdir ~/.bash</code>
+<pre><code>mkdir ~/.bash</code></pre>
 
 Now create an aliases file and open it
 
-<code>touch aliases
-mate aliases</code></li>
+<pre><code>touch aliases
+mate aliases</code></pre></li>
 	<li>This file is where you can create and manage your shortcuts to your oft-used commands. It's remarkably easy. For example:
 
-<code>alias gb='git branch'</code>
+<pre><code>alias gb='git branch'</code></pre>
 
 The above line would allow you to view a list of your current git branches simply by typing gb directly into the command line, and:
 
-<code>alias ia='open -b jp.informationarchitects.WriterForMacOSX'</code>
+<pre><code>alias ia='open -b jp.informationarchitects.WriterForMacOSX'</code></pre>
 
 Would allow you to open up a file in iA Writer by running: ia myfile.md</li>
 </ol>

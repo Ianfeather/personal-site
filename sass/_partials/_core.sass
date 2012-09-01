@@ -5,7 +5,7 @@ html
   overflow-y: scroll
   border-top: 10px solid $main-blue
 
-.main-content
+.content-inner
   padding: 0 10px
 
 @font-face
@@ -26,11 +26,11 @@ h1, h2, h3, h4, h5, h6,
   margin-bottom: 0.75em
 
 h1, .h1
-  @extend %extra-large-type
+  @extend %huge-type
 
 h2, .h2,
 h3, .h3
-  @extend %large-type
+  @extend %extra-large-type
 
 h5, .h5
   @extend %uppercase-text
@@ -40,8 +40,9 @@ h5, .h5
 
 p, ol, ul, dl, address
   +hyphens()
+  @extend %large-type
   @extend %margin-bottom-20
-  line-height: 28px
+  color: $copy
 
 blockquote
   @extend %blue-text
