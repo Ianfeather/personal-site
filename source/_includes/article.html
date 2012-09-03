@@ -1,12 +1,6 @@
 {% unless page.no_header %}
 
   <header>
-    {% if index %}
-      <h1 class="title"><a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a></h1>
-    {% else %}
-      <h1 class="title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
-    {% endif %}
-
     {% unless page.meta == false %}
       <p class="post-date">
         {% include post/date.html %}{{ time }}
@@ -15,12 +9,17 @@
         {% endif %}
       </p>
     {% endunless %}
+    {% if index %}
+      <h1 class="blog-title"><a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a></h1>
+    {% else %}
+      <h1 class="blog-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
+    {% endif %}
   </header>
 
 {% endunless %}
 
 {% if index %}
-  <div class="blog-post">{{ content | excerpt }}</div>
+  <div>{{ content | excerpt }}</div>
   {% capture excerpted %}{{ content | has_excerpt }}{% endcapture %}
   {% if excerpted == 'true' %}
     <footer>
@@ -28,5 +27,5 @@
     </footer>
   {% endif %}
 {% else %}
-<div class="blog-post">{{ content }}</div>
+<div>{{ content }}</div>
 {% endif %}

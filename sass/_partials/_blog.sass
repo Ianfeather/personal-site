@@ -1,23 +1,36 @@
+[class^="grid-"] > [class^="col-"]
+  +at(max580)
+    float: none
+    width: 100%
+
 .main-content
+  margin: 0 auto
+  width: 100%
+  +transition(all, 0.5s, ease)
   .textReader &
     opacity: 0.2
-  +respond-to(2)
-    +transition(all, 0.5s, ease)
-    margin-bottom: 30px
-    padding: 24px 0
-  +respond-to(3)
-    margin: 0 auto
+  +at(768)
     width: 80%
 
 .blog-post
   padding-bottom: 1em
-  margin-bottom: 4em
+  margin-bottom: 2em
+  &:last-child
+    margin-bottom: 0
   .blog-index &
-    border-bottom: 1px solid $light-blue
+    border-bottom: 2px solid $light-blue
+    &:last-child
+      border-bottom: none
+  ul
+    margin-left: 1em
+  img
+    @extend %block-center
+    margin-bottom: 30px
+  h2
+    margin-top: 2em
 
-.blog-post img
-  @extend %block-center
-  margin-bottom: 30px
+.blog-title
+  @extend %heading-type
 
 .post-date
   color: $subdued
