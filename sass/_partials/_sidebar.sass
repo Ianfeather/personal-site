@@ -1,13 +1,16 @@
 .sidebar
-  +at(2)
+  +at(580)
     background-color: #fff
-    @extend %no-margin
+    margin: 0
+    float: right
   +at(max580)
     width: auto !important
     background-color: $very-light-blue
     margin: 0 -10px
     > section
       padding: 2em
+
+
 nav ul, .sidebar ul
   @extend %no-list-style
   @extend %no-margin-or-padding
