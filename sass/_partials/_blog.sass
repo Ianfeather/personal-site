@@ -1,8 +1,3 @@
-[class^="grid-"] > [class^="col-"]
-  +at(max580)
-    float: none
-    width: 100%
-
 .blog-post
   padding-bottom: 1em
   margin-bottom: 2em
@@ -17,11 +12,22 @@
   img
     @extend %block-center
     margin-bottom: 30px
-  h2
-    margin-top: 2em
 
 .blog-title
-  @extend %heading-type
+  font-size: 86px
+  letter-spacing: -0.05em
+  line-height: 1.1
+  margin-bottom: 0.3em
+  a
+    @extend %blue-text
+
+.blog-subtitle
+  color: $maroon
+  margin-top: 0
+  line-height: 1.5
+  .blog-index &
+    margin-bottom: 2.5em
 
 .post-date
   color: $subdued
+  margin-bottom: 0.5em

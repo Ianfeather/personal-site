@@ -1,17 +1,36 @@
-.col-2
-  max-width: 980px
+*
+  +box-sizing()
+
+html
+  overflow-y: scroll
+  border-top: 10px solid $maroon
+
+img
+  @extend %margin-bottom-30
+  max-width: 100%
+
+body
+  // background: url('../images/striped_lens.png')
+  padding: 1rem
+  +at(768)
+    padding: 3rem
+  +at(1000)
+    padding: 5rem
+
+[class^="grid-"] > [class^="col-"]
+  +at(max580)
+    float: none
+    width: 100%
+
+.col-1
+  padding-left: 1rem
+  +at(768)
+    padding-left: 3rem
+  +at(1000)
+    padding-left: 5rem
 
 .main-content
   margin: 0 auto
   width: 100%
   +transition(all, 0.5s, ease)
-  .textReader &
-    opacity: 0.2
-  +at(768)
-    width: 80%
-
-
-
-
-
-
+  padding: 10px

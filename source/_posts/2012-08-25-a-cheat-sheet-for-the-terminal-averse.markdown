@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "A Cheat Sheet for the Terminal-Averse"
+written: "after CLI enlightenment"
 date: 2012-02-14 15:16
 comments: true
 categories: 

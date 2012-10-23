@@ -1,6 +1,8 @@
 ---
 layout: post
-title: "The Neglected Medium: Can we replicate creative communication online?"
+title: "The Neglected Medium"
+subtitle: "Can we replicate creative communication online?"
+written: "whilst drunk"
 date: 2012-06-04 15:17
 comments: true
 categories: 
