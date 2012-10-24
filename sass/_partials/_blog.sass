@@ -3,18 +3,12 @@
   margin-bottom: 2em
   &:last-child
     margin-bottom: 0
+    border-bottom: none
   .blog-index &
     border-bottom: 2px solid $light-blue
-    &:last-child
-      border-bottom: none
-  ul
-    margin-left: 1em
-  img
-    @extend %block-center
-    margin-bottom: 30px
 
 .blog-title
-  font-size: 86px
+  @extend %heading-type
   letter-spacing: -0.05em
   line-height: 1.1
   margin-bottom: 0.3em
@@ -29,5 +23,6 @@
     margin-bottom: 2.5em
 
 .post-date
+  @extend %large-type
   color: $subdued
-  margin-bottom: 0.5em
+  margin-bottom: 0.3em

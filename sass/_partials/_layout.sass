@@ -1,36 +1,37 @@
 *
-  +box-sizing()
+  +box-sizing(border-box)
 
 html
   overflow-y: scroll
   border-top: 10px solid $maroon
 
+body
+  padding: $small-spacing
+  +at(768)
+    padding: $mid-spacing
+  +at(1000)
+    padding: $large-spacing
+
 img
   @extend %margin-bottom-30
   max-width: 100%
 
-body
-  // background: url('../images/striped_lens.png')
-  padding: 1rem
-  +at(768)
-    padding: 3rem
-  +at(1000)
-    padding: 5rem
-
-[class^="grid-"] > [class^="col-"]
-  +at(max580)
-    float: none
-    width: 100%
-
-.col-1
-  padding-left: 1rem
-  +at(768)
-    padding-left: 3rem
-  +at(1000)
-    padding-left: 5rem
-
 .main-content
-  margin: 0 auto
-  width: 100%
   +transition(all, 0.5s, ease)
-  padding: 10px
+  @extend %block-center
+
+.content-inner
+  @extend %grid-wrapper
+
+.main-header, 
+.sidebar
+  @extend %single-column
+
+.main-header
+  text-align: center
+  +at(768)
+    text-align: left
+    float: right
+
+.blog-area
+  @extend %double-column

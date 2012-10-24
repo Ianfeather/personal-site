@@ -1,55 +1,27 @@
 html
-  font-size: 100%
+  font: 1em/1.5 Arial, Helvetica, sans-serif 
 
-@font-face
-  font-family: 'icon'
-  src: url("css/fonts/entypo-webfont.eot")
-  src: url("css/fonts/entypo-webfont.eot?#iefix") format("embedded-opentype"), url("css/fonts/entypo-webfont.woff") format("woff"), url("css/fonts/entypo-webfont.ttf") format("truetype"), url("css/fonts/entypo-webfont.svg#EntypoRegular") format("svg")
-  font-weight: normal
-  font-style: normal
-
-
-// ******************************************************2.HEADINGS
-
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6
-  @extend %blue-text
-  font-weight: normal
-  line-height: 1.2
-  margin-bottom: 0.75em
-
-h1, .h1
-  @extend %huge-type
-
-h2, .h2,
-h3, .h3
-  @extend %extra-large-type
-
-h5, .h5
-  @extend %uppercase-text
-  letter-spacing: 0.1em
-
-/****************************************************** 3.TYPOGRAPHY
-
-p, ol, ul, dl, address
-  +hyphens()
-  @extend %huge-type
-  @extend %margin-bottom-20
-  color: $copy
-
-blockquote
-  @extend %blue-text
-  border-left: 1px solid $main-blue
-  font-style: italic
-
-/***************************************************** 4. LINKS
-
-a, a:visited, a:active, a:focus
-  @extend %blue-text
+body
+  min-height: 100%
+  color: $base_font_color
   word-wrap: break-word
 
-a:hover
-  +transition()
-  @extend %red-text
-  text-decoration: none
+p
+  margin-bottom: 1em
+  +hyphens()
+  @extend %extra-large-type
 
+a
+  @extend %blue-text
+  cursor: pointer
+  text-decoration: none
+  &:hover
+    +transition()
+    @extend %red-text
+    text-decoration: none
+
+h1, h2, h3, h4, h5, h6
+  @extend %blue-text
+  @extend %no-margin-or-padding
+  font-weight: normal
+  line-height: 1.2

@@ -1,3 +1,0 @@
-[submodule "sass/framework"]
-	path = sass/framework
-	url = git@github.com:Ianfeather/css-framework.git
