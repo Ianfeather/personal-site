@@ -5,11 +5,11 @@ body
   min-height: 100%
   color: $base_font_color
   word-wrap: break-word
-
+  @extend %extra-large-type
 p
+  margin-top: 0
   margin-bottom: 1em
   +hyphens()
-  @extend %extra-large-type
 
 a
   @extend %blue-text
@@ -25,3 +25,12 @@ h1, h2, h3, h4, h5, h6
   @extend %no-margin-or-padding
   font-weight: normal
   line-height: 1.2
+
+blockquote
+  font-style: italic
+  -webkit-font-smoothing: antialiased
+  color: $maroon
+
+pre, code
+  margin: 0
+  padding: 0

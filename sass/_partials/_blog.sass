@@ -1,28 +1,42 @@
 .blog-post
   padding-bottom: 1em
   margin-bottom: 2em
-  &:last-child
-    margin-bottom: 0
-    border-bottom: none
   .blog-index &
-    border-bottom: 2px solid $light-blue
+    border-bottom: 1px dashed $light-blue
+  h2
+    @extend %margin-bottom-small
+  ol
+    padding-left: 0
+  figure
+    margin: $small-spacing 0
 
 .blog-title
-  @extend %heading-type
+  @extend %heading-type-mobile
+  @extend %margin-bottom-0
   letter-spacing: -0.05em
   line-height: 1.1
-  margin-bottom: 0.3em
+  +at(450)
+    +font-size(80)
   a
     @extend %blue-text
 
 .blog-subtitle
+  @extend %huge-type
+  @extend %margin-bottom-small
   color: $maroon
   margin-top: 0
   line-height: 1.5
-  .blog-index &
-    margin-bottom: 2.5em
+  .blog-archives &
+    @extend %margin-bottom-mid
+    margin-top: $mid-spacing
+
+.blog-headings
+  @extend %margin-bottom-mid
 
 .post-date
   @extend %large-type
   color: $subdued
   margin-bottom: 0.3em
+
+.blog-archive-entry
+  @extend %margin-bottom-small

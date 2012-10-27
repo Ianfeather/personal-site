@@ -1,0 +1,66 @@
+// Header
+
+.mark
+  @extend %margin-bottom-mid
+  border-bottom: 1px dashed $maroon
+  .blog-subtitle
+    margin-bottom: 2rem
+
+nav ul, .sidebar ul
+  @extend %no-list-style
+  @extend %no-margin-or-padding
+
+
+%navigation-item
+  +border-radius(100px)
+  @extend %margin-bottom-10
+  border: 2px solid $very-light-blue
+  &:hover
+    border: 2px solid $red
+
+.nav
+  font-size: 1em
+  margin-bottom: 30px
+
+.nav-item
+  @extend %regular-type
+  @extend %navigation-item
+  width: 80%
+  padding: 10px
+  +style-placeholder
+    color: $main-blue
+
+
+.contact-links
+  margin-bottom: 20px
+
+.ext-sprite
+  +background-size(1.6em)
+
+.ext-twitter
+  margin-right: 20px
+
+.svg .ext-twitter
+  @extend %navigation-item
+  @extend %image-replacement
+  @extend %round-link
+  background-position: 0 -1.2em
+
+
+.svg .ext-github
+  @extend %navigation-item
+  @extend %image-replacement
+  @extend %round-link
+  background-position: 0 0.2em
+
+// Sidebar
+
+.view-all-posts
+  margin-top: $small-spacing
+
+// Footer
+
+.main-footer
+  margin-top: $large-spacing
+  border-top: 1px dashed $maroon
+  padding-top: $small-spacing

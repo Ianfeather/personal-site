@@ -1,7 +1,7 @@
 %grid-wrapper
   @extend %clearfix
   margin-left: -$small-spacing
-  +at(720)
+  +at(800)
     margin-left: -$mid-spacing
   +at(1000)
     margin-left: -$large-spacing
@@ -9,7 +9,7 @@
 
 %grid-column
   padding-left: $small-spacing
-  +at(720)
+  +at(800)
     float: left
     padding-left: $mid-spacing
   +at(1000)
@@ -19,11 +19,11 @@
 
 %single-column
   @extend %grid-column
-  +at(768)
+  +at(800)
     width: 33.3333%
 
 
 %double-column
   @extend %grid-column
-  +at(768)
+  +at(800)
     width: 66.6666%

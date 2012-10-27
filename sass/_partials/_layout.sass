@@ -7,7 +7,7 @@ html
 
 body
   padding: $small-spacing
-  +at(768)
+  +at(800)
     padding: $mid-spacing
   +at(1000)
     padding: $large-spacing
@@ -27,11 +27,20 @@ img
 .sidebar
   @extend %single-column
 
+.blog-area
+  @extend %double-column
+
 .main-header
   text-align: center
-  +at(768)
+  +at(800)
     text-align: left
     float: right
 
-.blog-area
-  @extend %double-column
+.sidebar
+  +at(800)
+    margin: 0
+    float: right
+
+
+
+
