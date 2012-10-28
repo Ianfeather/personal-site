@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Hangover Hack"
+written: "with misplaced hubris"
 date: 2012-03-17 15:16
 comments: true
 categories: 

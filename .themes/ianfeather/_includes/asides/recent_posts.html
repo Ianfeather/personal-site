@@ -1,11 +1,11 @@
 <section>
-  <h1>Other Posts</h1>
+  <h1 class="blog-subtitle">Recent Posts</h1>
   <ul id="js-recent-posts">
     {% for post in site.posts limit: site.recent_posts %}
       <li class="post">
         <a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a>
       </li>
     {% endfor %}
-    <li><a href="{{ root_url }}/blog/archives">View all</a></li>
+    <li class="view-all-posts"><a href="{{ root_url }}/blog/archives">View all</a></li>
   </ul>
 </section>
