@@ -1,68 +1,25 @@
 ---
 layout: post
 title: "Object Oriented Sass"
+subtitle: "A study into performance implications"
+written: "for the <a href='http://devops.lonelyplanet.com/oosass'>Lonely Planet DevOps blog</a>"
 date: 2012-7-30 13:51
 comments: true
 categories: 
 ---
 
-Note: This post was originally written on the <a href="http://devops.lonelyplanet.com/oosass">Lonely Planet DevOps blog</a>
-
-I’ve been re-examining how we declare and manage CSS objects at LP, recently using the placeholder syntax (%) in Sass over a class. I had a couple of reservations around this, partly because it’s a leap away from the traditional OOCSS method of using multiple classes as building blocks but also in its usability and impact on performance.
+I’ve been re-examining how we declare and manage CSS objects at LP, recently using the placeholder syntax (%) in Sass over a class directly in the markup. I had a couple of reservations around this, partly because it’s a leap away from the traditional OOCSS method of using multiple classes as building blocks but also in its usability and impact on performance.
 
 The more I’ve been dabbling with the placeholder approach though; the more I can see that traversing the middle ground between the two is going to result in suboptimal code. So I decided to do some research and disprove my reservations.
 
-For those who haven't yet used them, selectors with placeholders will not be included in the CSS output but they are able to be extended. For example:
+For those who haven't yet used them, selectors with placeholders will not be included in the CSS output but they are able to be extended. For example, using everyone’s favourite media object would mean we no longer have to chain the .media class to benefit from its abstraction and we can make sure the media declaration won't be output unless used:
 
 {% codeblock %}
-
-%some-unused-class
-  color: red
-  background: black
-
-%base-button-class
-  padding: 10px
-  display: inline-block
-
-.checkout-button
-  @extend %base-button-class
-  background-color: red
-
-.submit-button
-  @extend %base-button-class
-  background-color: black
-
-{% endcodeblock %}
-
-will output to:
-
-{% codeblock %}
-
-.checkout-button,
-.submit-button {
-  padding: 10px;
-  display: inline-block;
-}
-
-.checkout-button {
-  background-color: red;
-}
-.submit-button {
-  background-color: black;
-}
-
-{% endcodeblock %}
-
-And an example using everyone’s favourite media object would mean we no longer have to chain the .media class to benefit from its abstraction:
-
-{% codeblock %}
-
 %media
   … the media object …
 
 .comment-block
   @extend %media
-
 {% endcodeblock %}
 
 Effectively what this allows us to do is construct our css objects in our css as opposed to in the markup. There are definitely pros and cons to this approach and all could be subjective depending on your existing codebase and workflow. I've highlighted some below but I'd be keen to hear of any that I have missed.
@@ -92,30 +49,29 @@ Following this, I optimised the CSS by abstracting out some classes and thinning
 My main concern was that the gzipped file size would actually increase because of less repetition in the code so it was good to see that this is minimal and that the final code is still smaller. (This blocker could potentially be removed only by extending placeholders which have at least two rule declarations inside.)
 
 <table>
-
-<tbody><tr>
-<th>&nbsp;</th> <th>File size</th> <th>When Gzipped</th> <th>Compression rate</th>
-</tr>
-<tr>
-<td>Base</td>
-<td>26514</td>
-<td>7055</td>
-<td>73%</td>
-</tr>
-<tr>
-<td>After optimisation</td>
-<td>26411</td>
-<td>6196</td>
-<td>77%</td>
-</tr>
-<tr>
-<td>Using OOSass</td>
-<td>24520</td>
-<td>5920</td>
-<td>76%</td>
-</tr>
-
-</tbody>
+  <tbody>
+    <thead class="table-header">
+      <th>&nbsp;</th> <th>Size</th> <th>Gzipped</th> <th>Compression</th>
+    </tr>
+    <tr>
+      <td>Base</td>
+      <td data-label="Size" class="val">26514</td>
+      <td data-label="Gzipped" class="val">7055</td>
+      <td data-label="Compression" class="val">73%</td>
+    </tr>
+    <tr>
+      <td>OOCSS</td>
+      <td data-label="Size" class="val">26411</td>
+      <td data-label="Gzipped" class="val">6196</td>
+      <td data-label="Compression" class="val">77%</td>
+    </tr>
+    <tr>
+      <td>OOSass</td>
+      <td data-label="Size" class="val">24520</td>
+      <td data-label="Gzipped" class="val">5920</td>
+      <td data-label="Compression" class="val">76%</td>
+    </tr>
+  </tbody>
 </table>
 
 ## Performance in the browser
@@ -126,7 +82,7 @@ I created two pages, each with 1200 buttons, one using chained classes and one u
 
 The Profiled results for both pages:
 
-<img src="http://s3.amazonaws.com/files.posterous.com/temp-2012-07-30/gqljjyuevtomeeyHxwFoHctuaqjfAHBqCcuqEcufskGgoioubHnEzukhoqqe/opera-profile.jpg.scaled699.jpg?AWSAccessKeyId=AKIAJFZAE65UYRT34AOQ&Expires=1351433152&Signature=m7qqtyqmBVY7sOFxRg7%2BaUShSqU%3D" alt="Opera profile view" />
+<img src="http://getfile3.posterous.com/getfile/files.posterous.com/temp-2012-07-30/gqljjyuevtomeeyHxwFoHctuaqjfAHBqCcuqEcufskGgoioubHnEzukhoqqe/opera-profile.jpg.scaled699.jpg" alt="Opera profile view" />
 
 ## Conclusions
 
