@@ -48,6 +48,7 @@ Now create an aliases file and open it
 touch aliases
 mate aliases
 {% endcodeblock %}
+
 </li>
 	<li>This file is where you can create and manage your shortcuts to your oft-used commands. It's remarkably easy. For example:
 

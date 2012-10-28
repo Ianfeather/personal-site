@@ -1,6 +1,6 @@
 .blog-post
-  padding-bottom: 1em
-  margin-bottom: 2em
+  @extend %margin-bottom-mid
+  padding-bottom: $small-spacing
   .blog-index &
     border-bottom: 1px dashed $light-blue
   h2
@@ -36,7 +36,7 @@
 .post-date
   @extend %large-type
   color: $subdued
-  margin-bottom: 0.3em
+  @extend %margin-bottom-0
 
 .blog-archive-entry
   @extend %margin-bottom-small
