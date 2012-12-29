@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Chemical Poetry]]></title>
+  <link href="http://chemicalpoetry.com/atom.xml" rel="self"/>
+  <link href="http://chemicalpoetry.com/"/>
+  <updated>2012-10-28T18:05:15+00:00</updated>
+  <id>http://chemicalpoetry.com/</id>
+  <author>
+    <name><![CDATA[Mark Lazaret]]></name>
+    <email><![CDATA[info@ianfeather.co.uk]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Methadone]]></title>
+    <link href="http://chemicalpoetry.com/new-post/"/>
+    <updated>2012-10-28T17:32:00+00:00</updated>
+    <id>http://chemicalpoetry.com/new-post</id>
+    <content type="html"><![CDATA[
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Be of no misconception 
+</span><span class='line'>another death has spawned a generation.
+</span><span class='line'>We are children of a moment
+</span><span class='line'>wide-eyed at the prospect of living
+</span><span class='line'>
+</span><span class='line'>where cotton picked euphoria will take on the law
+</span><span class='line'>where legality will be left glancing forward,
+</span><span class='line'>craning its neck to see, darting forth,
+</span><span class='line'>straining against the red tape, and watching
+</span><span class='line'> 
+</span><span class='line'>the leader of the race turn and laugh,
+</span><span class='line'>stare in bemusement at their futility, shrug
+</span><span class='line'>as a new burst of energy is released 
+</span><span class='line'>into the clubs, onto the streets, into the valleys and the schools, 
+</span><span class='line'>
+</span><span class='line'>the floodgates have opened,
+</span><span class='line'>evolving with open source pharmacology,
+</span><span class='line'>to a discarded generation disgusted with propaganda 
+</span><span class='line'>rejoicing a ride into rebellion</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+</feed>
