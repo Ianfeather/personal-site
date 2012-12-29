@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Ian Feather]]></title>
+  <link href="http://Ianfeather.github.com/ianfeatherV3/atom.xml" rel="self"/>
+  <link href="http://Ianfeather.github.com/ianfeatherV3/"/>
+  <updated>2012-12-29T15:50:48+00:00</updated>
+  <id>http://Ianfeather.github.com/ianfeatherV3/</id>
+  <author>
+    <name><![CDATA[Ian Feather]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Object Oriented Sass]]></title>
+    <link href="http://Ianfeather.github.com/ianfeatherV3/object-oriented-sass/"/>
+    <updated>2012-07-30T13:51:00+01:00</updated>
+    <id>http://Ianfeather.github.com/ianfeatherV3/object-oriented-sass</id>
+    <content type="html"><![CDATA[<p>I’ve been re-examining how we declare and manage CSS objects at LP, recently using the placeholder syntax (%) in Sass over a class directly in the markup. I had a couple of reservations around this, partly because it’s a leap away from the traditional OOCSS method of using multiple classes as building blocks but also in its usability and impact on performance.</p>
+
+<p>The more I’ve been dabbling with the placeholder approach though; the more I can see that traversing the middle ground between the two is going to result in suboptimal code. So I decided to do some research and disprove my reservations.</p>
+
+<p>For those who haven&#8217;t yet used them, selectors with placeholders will not be included in the CSS output but they are able to be extended. For example, using everyone’s favourite media object would mean we no longer have to chain the .media class to benefit from its abstraction and we can make sure the media declaration won&#8217;t be output unless used:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>%media
+</span><span class='line'>  … the media object …
+</span><span class='line'>
+</span><span class='line'>.comment-block
+</span><span class='line'>  @extend %media</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Effectively what this allows us to do is construct our css objects in our css as opposed to in the markup. There are definitely pros and cons to this approach and all could be subjective depending on your existing codebase and workflow. I&#8217;ve highlighted some below but I&#8217;d be keen to hear of any that I have missed.</p>
+
+<h2>OOSass pros and cons:</h2>
+
+<h3>Pros</h3>
+
+<ul>
+<li>More readable style declarations - there’s no need to keep your naming short</li>
+<li>Leaner markup</li>
+<li>More selective use of styles (only really applicable to sites with multiple stylesheets responsible for different areas)</li>
+</ul>
+
+
+<h3>Cons (all debatable)</h3>
+
+<ul>
+<li>Back end devs have to write Sass if they want to build up styles</li>
+<li>Slower to iterate on styles than directly on the dom</li>
+<li>Only possible using preprocessors</li>
+</ul>
+
+
+<h2>Performance</h2>
+
+<p>If you’re working with OOCSS chances are you care about performance and metrics. So, whilst the placeholder syntax is feeling like a nice approach to me, I wanted to run some tests to see the effect on css size.</p>
+
+<p>I took the css for a previous incarnation of ianfeather.co.uk as the base file. It was written a long time ago with loose OOCSS and is fairly performant but not heavily optimised.</p>
+
+<p>Following this, I optimised the CSS by abstracting out some classes and thinning down a few selectors. I wasn’t expecting big improvements but I wanted to ensure that I had a performant baseline file to test against.</p>
+
+<p>My main concern was that the gzipped file size would actually increase because of less repetition in the code so it was good to see that this is minimal and that the final code is still smaller. (This blocker could potentially be removed only by extending placeholders which have at least two rule declarations inside.)</p>
+
+<table>
+  <tbody>
+    <thead class="table-header">
+      <th>&nbsp;</th> <th>Size</th> <th>Gzipped</th> <th>Compression</th>
+    </tr>
+    <tr>
+      <td>Base</td>
+      <td data-label="Size" class="val">26514</td>
+      <td data-label="Gzipped" class="val">7055</td>
+      <td data-label="Compression" class="val">73%</td>
+    </tr>
+    <tr>
+      <td>OOCSS</td>
+      <td data-label="Size" class="val">26411</td>
+      <td data-label="Gzipped" class="val">6196</td>
+      <td data-label="Compression" class="val">77%</td>
+    </tr>
+    <tr>
+      <td>OOSass</td>
+      <td data-label="Size" class="val">24520</td>
+      <td data-label="Gzipped" class="val">5920</td>
+      <td data-label="Compression" class="val">76%</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h2>Performance in the browser</h2>
+
+<p>The CSS file size is key to the critical path but I also wanted to ensure that using this method wouldn’t increase the selector matching or paint time.</p>
+
+<p>I created two pages, each with 1200 buttons, one using chained classes and one using extended classes. I then profiled them using Opera’s CSS Profiler. Unfortunately the results were absolutely identical so this test was inconclusive. Perhaps a larger test file with more variance would be required to create a true test.</p>
+
+<p>The Profiled results for both pages:</p>
+
+<p><img src="http://getfile3.posterous.com/getfile/files.posterous.com/temp-2012-07-30/gqljjyuevtomeeyHxwFoHctuaqjfAHBqCcuqEcufskGgoioubHnEzukhoqqe/opera-profile.jpg.scaled699.jpg" alt="Opera profile view" /></p>
+
+<h2>Conclusions</h2>
+
+<p>Whilst our test showed there was no huge performance benefit for this approach, it also failed to show a downside for it. This, for me, is a validation of the approach and allows us to look at the more intangible benefits we outlined earlier.</p>
+
+<p>I also think there are performance gains to be made when scaling up. We’ll use our Sass gem, Beaker, across a fairly wide range of projects and using this will mean each project has access to all objects and base classes as well as the ability to pick and choose which are required and which will be output to their project.css file.</p>
+
+<p>Whether or not this approach is right for you is likely dependant on your existing css architecture. For us, we have the opportunity to shape our future CSS and I think this is a healthy way of doing it.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Neglected Medium]]></title>
+    <link href="http://Ianfeather.github.com/ianfeatherV3/the-neglected-medium-can-we-replicate-creative-communication-online/"/>
+    <updated>2012-06-04T15:17:00+01:00</updated>
+    <id>http://Ianfeather.github.com/ianfeatherV3/the-neglected-medium-can-we-replicate-creative-communication-online</id>
+    <content type="html"><![CDATA[<p>The smoke hung to the ceiling, the smokiness of the whisky clung to the back of our throats. The comfort of the walls liberated our expression. We were conspiring, and madness dared to precede us.</p>
+
+<p>Conspiring on change, deliberating on decision, gathering our thoughts for the future of the web: as we could each see it. Tongues flew fast on the back of ideas and tangents. We bounced from process to product, from theory to theatre and concepts had their potential amplified by each discourse.</p>
+
+<p>Some of us sat up, stood, paced, drew wildly on the walls. Others stared at the floor and shook their heads, looking up to interject in the vein of &#8216;Exactly!&#8217;, &#8216;Tell that to the world&#8217; or &#8216;Pass me the bottle&#8217;.</p>
+
+<p>Can we ever recreate this fast flowing and fluid communication through a remote medium? Do remote teams suffer as a consequence?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hangover Hack Result]]></title>
+    <link href="http://Ianfeather.github.com/ianfeatherV3/hangover-hack-result/"/>
+    <updated>2012-03-24T15:17:00+00:00</updated>
+    <id>http://Ianfeather.github.com/ianfeatherV3/hangover-hack-result</id>
+    <content type="html"><![CDATA[<ul>
+<li><a class="btn btn-external btn-photo" href="http://ianfeather.co.uk/playground/image-play/">Use the app</a></li>
+<li><a class="btn btn-external btn-github" href="https://github.com/Ianfeather/image-play">View the source code</a></li>
+</ul>
+
+
+<p>Last Saturday, in a canyon of a hangover, I decided to <a href="http://ianfeather.co.uk/hangover-hack/">ditch my client work and just make something fun</a>. I&#8217;d encourage others to do the same. Maybe not <I>in favour</I> of client work but do try and make some time just to play around, experiment and recapture that feeling of why you first got enraptured by the web.</p>
+
+<p>I gave myself a few guidelines:</p>
+
+<ul>
+<li>Not to get wrapped up in best practices</li>
+<li>Chose speed of development over maintainability. In fact, ignore maintainability.</li>
+<li>First thought, best thought.</li>
+</ul>
+
+
+<p>The last is one I borrowed from Jack Kerouac. I didn&#8217;t know what I was going to build and so it made sense to make the outcome an organic production of my erratic, pickled in alcohol, thought process.</p>
+
+<p>I wanted to build something involving images so I dragged out an old chunk of code from a previous project and tapped into the Flickr api. I liked the idea of being able to build a grid of photos based on some parameters. Maybe based on recent keywords from a twitter stream or using geolocation. I started out with just a search box and a lazy grid built of four columns with a ragged y endpoint. A cheat of a solution but I was determined to cheat where possible: I wanted quick development and iteration.</p>
+
+<p>Once I had the gallery mode working on search I got distracted by the idea of using filters to see if you could create instagram like photos with CSS. I could have used a js library but had heard that chrome canary had introduced support for CSS filters so I fired it up and built a little webkit only control panel, a grin on my face from the anarchic approach I was taking in light of recent industry dialogue on the matter.</p>
+
+<h2>What I learned?</h2>
+
+<p>That it&#8217;s fun to just mess about with code like no one is watching. That was the real lesson.</p>
+
+<h2>What improvements would I make?</h2>
+
+<p>It took around 6 hours to make, although I split that time with 6 nations rugby, but if I had had more time I&#8217;d build in instagram support and add the ability to switch back and forth between the two modes more easily.</p>
+
+<p>Maybe I&#8217;ll add that in the future but it&#8217;s more likely I&#8217;ll just build something new. Either way, in the future, I&#8217;ll definitely be building something just for the sake of it.</p>
+
+<p><a href="http://ianfeather.co.uk/playground/image-play/">Play around with the end result</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hangover Hack]]></title>
+    <link href="http://Ianfeather.github.com/ianfeatherV3/hangover-hack/"/>
+    <updated>2012-03-17T15:16:00+00:00</updated>
+    <id>http://Ianfeather.github.com/ianfeatherV3/hangover-hack</id>
+    <content type="html"><![CDATA[<p>I&#8217;m hungover, on crutches and my girlfriend is at work. I have loads of client work to deal with and by rights that is what today should involve but instead I&#8217;m going to do something different, something I rarely do.</p>
+
+<p>I&#8217;m going to make something <em>FUN</em>.</p>
+
+<p>For no other reason. I&#8217;m just going to take a few hours out and see what comes up at the far end. Maybe it&#8217;s something I should do more often, something everyone should do more often. Let&#8217;s see.</p>
+
+<p>The six nations is on tv and I&#8217;ve got a cup of tea on the go. Hopefully writing this will mean that I actually do it rather than getting caught up in other bits.</p>
+
+<p>Ps. Sorry to my clients in advance.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A Cheat Sheet for the Terminal-Averse]]></title>
+    <link href="http://Ianfeather.github.com/ianfeatherV3/a-cheat-sheet-for-the-terminal-averse/"/>
+    <updated>2012-02-14T15:16:00+00:00</updated>
+    <id>http://Ianfeather.github.com/ianfeatherV3/a-cheat-sheet-for-the-terminal-averse</id>
+    <content type="html"><![CDATA[<p>Did you know there&#8217;s a cheat sheet you can build into Terminal? It&#8217;s one that allows you to run complex git commands and change directories just by hitting a couple of keys. The best part is they&#8217;re keys that you define for yourself.</p>
+
+<p>If you&#8217;re a designer/front end developer who is wary and resistant to the growing impetus of the command line then you&#8217;re in luck.</p>
+
+<p>Cut to the source code: <a class="h6" href="https://github.com/Ianfeather/aliases/blob/master/aliases">https://github.com/Ianfeather/aliases/blob/master/aliases</a></p>
+
+<h2>Here&#8217;s how it works:</h2>
+
+
+<p>Being a terminal-averse user you&#8217;re probably not a huge fan of Vim. If this is the case you can invoke textmate from the command line as standard. If you use coda then you will have to download this plugin first (<a href="http://wefoundland.com/project/command-line_coda/">http://wefoundland.com/project/command-line_coda/</a>) but it will make your life significantly easier. For this tutorial I&#8217;m going to use textmate but if you use coda simply replace &#8216;mate&#8217; with &#8216;coda&#8217; below, or the equivalent for your favourite text editor.</p>
+
+<ol>
+    <li>Fire up terminal</li>
+    <li>Open your local version of bash_profile
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mate ~/.bash_profile</span></code></pre></td></tr></table></div></figure>
+
+
+Add a link to your local aliases file by adding this line at the bottom of the file
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>source ~/.bash/aliases</span></code></pre></td></tr></table></div></figure>
+
+
+Now, save and close</li>
+    <li>Navigate to your local bash folder
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd ~/.bash</span></code></pre></td></tr></table></div></figure>
+
+
+If the above command yields a &#8216;directory does not exist&#8217; error, create this directory by running
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mkdir ~/.bash</span></code></pre></td></tr></table></div></figure>
+
+
+Now create an aliases file and open it
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>touch aliases
+</span><span class='line'>mate aliases</span></code></pre></td></tr></table></div></figure>
+
+
+</li>
+    <li>This file is where you can create and manage your shortcuts to your oft-used commands. It&#8217;s remarkably easy. For example:
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>alias gb='git branch'</span></code></pre></td></tr></table></div></figure>
+
+
+The above line would allow you to view a list of your current git branches simply by typing gb directly into the command line, and:
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>alias ia='open -b jp.informationarchitects.WriterForMacOSX'</span></code></pre></td></tr></table></div></figure>
+
+
+Would allow you to open up a file in iA Writer by running: ia myfile.md</li>
+</ol>
+
+
+<p>You can add, group and comment (#) as many rules as you like within this file. Here is a sample of my current alias setup: <a href="https://github.com/Ianfeather/aliases/blob/master/aliases">https://github.com/Ianfeather/aliases/blob/master/aliases</a></p>
+
+<p>It&#8217;s worth noting that this only works for your local user. If you want to create the same rules for all users you execute the same steps in /etc/aliases. Each user would still be able to override these using the above rules though.</p>
+
+<p>By defining rules around my most common workflow routines I&#8217;ve been able to improve productivity whilst also taming an area that was previously foreign territory.</p>
+
+<p>Give it a whirl. Any questions, I&#8217;ll do my best to help.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why Online Brand Personality Matters Today]]></title>
+    <link href="http://Ianfeather.github.com/ianfeatherV3/why-online-brand-personality-matters-today/"/>
+    <updated>2011-10-10T15:15:00+01:00</updated>
+    <id>http://Ianfeather.github.com/ianfeatherV3/why-online-brand-personality-matters-today</id>
+    <content type="html"><![CDATA[<p>I&#8217;m constantly impressed by businesses who are switched on to the growing impact social media is having on our day to day decisions. Before we commit to anything, be it buying a watch or choosing a restaurant, there is a high chance that we have used the internet to qualify it to ourselves. Right now, that may be Google but in the future every restaurant, boutique shop, airline and fish and chip van will have been qualified using social media - whether they know it or not.</p>
+
+<p>And if you think the above examples were chosen at random: realise that companies in those extraordinarily diverse sectors are not just recognising the value of social media but thoroughly embracing it. See <a href="http://twitter.com/#!/BrixtonVillage">@brixtonvillage</a>, <a href="http://twitter.com/#!/klm">@klm</a> and <a href="http://twitter.com/#!/NoFishyBusiness">@nofishybusiness</a> for some stunning examples.</p>
+
+<p>KLM have shown that a large corporation can have a heart (<a href="http://www.youtube.com/watch?v=Sh-JRoY7_LU">http://www.youtube.com/watch?v=Sh-JRoY7_LU</a>) and a personality that shines above a price driven market. In a crowded market peppered with budget airlines and a recession they&#8217;re separating themselves from the faceless. Air New Zealand  also showed that having a sense of humour could prove successful no matter the product price (<a href="http://www.youtube.com/watch?v=7-Mq9HAE62Y">http://www.youtube.com/watch?v=7-Mq9HAE62Y</a>). Maybe you haven&#8217;t heard of their tactics now, maybe it wouldn&#8217;t affect your buying decision either, but one day they&#8217;ll stick in your memory for this exact reason. What do you think of when you hear Thai Airways, Cathay Pacific or Delta?</p>
+
+<p>At the other end of the spectrum, to prove that there is no business too small for social, we have the Leeds based Fish and Chip shop van going under the moniker of No Fishy Business. They operate out of a nicely designed little vehicle on the streets of Leeds, at festivals, weddings and are available for private hire. Word of mouth was always going to be their method of advertising but word of mouth means so much more than it once used to. They&#8217;ve taken the common british dish and they&#8217;ve spiced it up, not just with their chilli infused batter, but with personality, fun and humour.</p>
+
+<p>Boutique venues like No Fishy Business and Brixton Village will quickly gain cult status simply by offering consistently great service and a great product. As consumers, we have thankfully moved beyond the styrofoam era (at least whilst the sun is out) and we expect more than just a product. We desire an experience. Quality of a product will always shine through and results accompany it organically but those who can offer more, those who can package a product that reverberates online long after its purchase, will give the user an experience that will keep them returning.</p>
+
+<p>Conversely, companies that have too long hidden behind false facades will gradually see them crumble under a barrage of tweets, reviews and dislikes. How do you see companies we already perceive negatively, like NTL, VirginMedia and every other ISP, surviving in the social era? Already PlusNet has emerged as an ISP with a personality, time will tell whether their product stacks up.</p>
+
+<p>Whether or not this happens in two, five or ten years, no one can know. What we do know is that the internet is poised and ready to take steps into a new era. Facebook has amassed vast quantities of data which is begging to be monetised. (The potential additions of more specific buttons to replace the Like button show a shift in their direction - <a href="http://techcrunch.com/2011/09/19/facebooks-new-buttons/">http://techcrunch.com/2011/09/19/facebooks-new-buttons/</a>). We can now use Twitter to quantify the popularity of a brand with Sentiment, Activity and Followers. Brands are appearing in Instagram photos, Gowalla tags and Foursquare check-ins.</p>
+
+<p>Let&#8217;s muse for a moment that Facebook does bring out a browser as has been hinted by many. Let&#8217;s go one step further and assume that they bring a tablet to the market with a custom browser installed. Facebook then becomes THE companion for your web experience. It&#8217;s everywhere you want it to be (and many places you won&#8217;t).</p>
+
+<p>Maybe you&#8217;ve heard of Facebook&#8217;s allegiance with Bing. Microsoft has sunk many small fortunes into keeping it alive and slowly but surely it has chipped away at Google&#8217;s dominance. But, let&#8217;s face it, far too slowly for anyone to care. If Facebook were to suddenly integrate the Like button into Bing&#8217;s search stream, with SEO replaced by user response and review, suddenly Bing would leap into relevance. Your search results wouldn&#8217;t be dictated by who could spend the most on SEO but instead by organic, user-driven data.</p>
+
+<p>This is just one potential combination of powerhouse companies. It is also just one possibility in a long line of events that will dictate our future as consumers and users.</p>
+
+<p>Not only is this good for the user it&#8217;s good for each and every company. They have been gifted a voice to the world. For free. How they use it is up to them but to think that they can survive without it is foolhardy. To quote the CEO of <a href="http://www.burberry.com">Burberry</a>, Angela Ahrendts,</p>
+
+<blockquote>&#8220;You have to build a social enterprise. You have to be totally connected with everyone who touches your brand. If you don&#8217;t do that, I don&#8217;t know what your business model is in 5 years.&#8221;</blockquote>
+
+
+<p>The consumer-digital world has a lot to look forward to.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[There are no Web Experts]]></title>
+    <link href="http://Ianfeather.github.com/ianfeatherV3/there-are-no-web-experts/"/>
+    <updated>2011-07-18T15:12:00+01:00</updated>
+    <id>http://Ianfeather.github.com/ianfeatherV3/there-are-no-web-experts</id>
+    <content type="html"><![CDATA[<p>In our ever changing industry we have at least one truth: there are no experts. Sure, in our midst are industry leaders, consultants, even the odd guru, but it must be remembered that no one has all the answers. For every good link, there are ten bad ones. For every insightful tweet there are a hundred misleading ones (not to mention a million mentioning iPads). And in the time between <a href="http://www.alistapart.com" title="A List Apart">alistapart</a> articles, there are maybe a thousand new individuals entering our industry who are learning from antiquated sources.</p>
+
+<p>During my time in the web industry I have already seen a change in attitudes towards this way of thinking. Early on I found opinion-driven rants permeated by hyperbolic advice all presented in absolute terms. There was no area for discussion. There was simply a right way and a thousand wrong ways.</p>
+
+<p>Now more and more I feel like there has been a shift for the better, a trend of discussion has developed over dictation. The question I find myself asking is: Has there actually been a culture shift or have I simply refined the sources?</p>
+
+<p>What makes our industry so exciting is that everyone has a voice and everyone has access to that voice. It also presents us with a bigger issue: how do we present the best information to those searching for it? How do newcomers to the industry catch up with the rapidly evolving entity that the web has become? Especially in the face of overwhelming adverse content?</p>
+
+<p>Well, as individuals, we can&#8217;t dictate these sources. We can only implore a critical mind. Socrates was quoted by Plato as saying:</p>
+
+<blockquote>&#8220;The reason I know that I am intelligent is that I know that I know nothing&#8221;</blockquote>
+
+
+<p>Paradoxical, and indeed an imprecise translation, or not, his expression is one that carries universal meaning. A potentially clearer translation (via Wikipedia) is &#8220;I am only wise insofar as what I don&#8217;t know, I don&#8217;t think I know&#8221;</p>
+
+<p>This wisdom applies to all of us, no matter our profession or position within it. To all those starting out in the industry, if by chance you have stumbled across this blog, my hope is that you question everything. There are too many sources tweeting or blogging their philosophy of the web as gospel when there is no gospel, not in the online world. No one knows where the web is going because we&#8217;re all steering it collectively.</p>
+
+<p>And it is changing for the better: content-first, mobile, html5, css3 and the potential for the elimination of older browsers have us all excited. My concern is that we are running away from teaching the fundamentals to anyone entering our industry.</p>
+
+<p>I welcome your feedback.</p>
+
+<h3>Resources:</h3>
+
+<p><a href="http://www.alistapart.com" title="A List Apart">http://www.alistapart.com</a></p>
+
+<p>It&#8217;s not for me to dictate where you should go for knowledge. That said, if you are new to the industry and want a reliable source I can offer no better than alistapart. Some of the content may be more advanced and thematic than you are searching for but stick with it, follow the authors on twitter, follow those they reference and build yourself up a reliable array of sources. And then question all of them!</p>
+
+<p>And here are a couple of excellent resources if per chance you are starting out in the Front End Development Game. I wish they had been around, or I had been aware of them, when I first began:</p>
+
+<p><a href="http://csswizardry.com/web-design+/" title="Web Design Plus">http://csswizardry.com/web-design+/</a> via @csswizardry
+<a href="http://taitems.github.com/Front-End-Development-Guidelines/" title="Taitems Front End Development Guidelines">http://taitems.github.com/Front-End-Development-Guidelines/</a> via @taitems</p>
+]]></content>
+  </entry>
+  
+</feed>
