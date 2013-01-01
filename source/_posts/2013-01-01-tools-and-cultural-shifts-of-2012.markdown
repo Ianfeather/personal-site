@@ -11,7 +11,7 @@ Our acceptance of competent 3rd party code and adoption of tools seems to have b
 
 I joined Lonely Planet in January 2012 and the list of tools/libraries that I've been introduced to over the last year is chock full of names that would have baffled me before. If I were to list those which we use day-to-day at work it would include: [StatsD](https://github.com/etsy/statsd), [Graphite](http://graphite.wikidot.com/), [Graphiti](https://github.com/paperlesspost/graphiti), [LogStash](http://logstash.net/), [Elastic Search](http://www.elasticsearch.org/), [Akamai](www.akamai.com), [Fozzie](https://github.com/lonelyplanet/fozzie), [Node](http://nodejs.org/), [Express](http://expressjs.com/), [Guard](https://github.com/guard/guard), [Jammit](https://github.com/documentcloud/jammit), [RequireJS](http://requirejs.org/), [Uglifier](https://github.com/lautis/uglifier), [Grunt](http://gruntjs.com/), [Postgres](http://www.postgresql.org/), [Rails](http://rubyonrails.org/), [Nginx](http://wiki.nginx.org/Main), [New Relic](http://newrelic.com/), [Nagios](http://www.nagios.org/), [PagerDuty](http://www.pagerduty.com/), [Chef](http://www.opscode.com/chef/), [Knife](http://wiki.opscode.com/display/chef/Knife), [AWS suite](http://aws.amazon.com/), [BrowserStack](http://www.browserstack.com/), [BEM](http://bem.info/method/), [Sass](http://sass-lang.com/), [Haml](http://haml.info/), [Coffeescript](http://coffeescript.org/)&hellip; and many more. The list goes on, and I've forgotten plenty. Exhausting right?
 
-But it hasn't just been the tools that have taken prescience, new channels of focus have evolved for me outside of the traditional Big Three  of Front End Development. The main areas I've been involved with as a result of my work at [Lonely Planet](http://www.lonelyplanet.com/vietnam/ho-chi-minh-city/hotels) have been Performance, Rails, Continuous Deployment and BDD.
+But it hasn't just been the tools that have taken prescience, new channels of focus have evolved for me outside of the traditional Big Three  of Front End Development. The main areas I've been involved with as a result of my work at [Lonely Planet](http://www.lonelyplanet.com/vietnam/ho-chi-minh-city/hotels) have been Performance, Preprocessors and Rails, Continuous Deployment and BDD.
 
 ## Performance
 
@@ -19,7 +19,7 @@ If I'm being super critical, my knowledge around performance pre 2012 was limite
 
 Performance has been something we live and breathe at LP and we discuss, demo and practise it constantly. We've also got a long way to go to get to where we need to be. Our monitoring is good (mostly due to [Fozzie](https://github.com/lonelyplanet/fozzie)) but still has a long way to go on the front end. Our reporting and alerting needs to be vastly improved and these are important challenges for 2013. 
 
-## Rails
+## Preprocessors and Rails
 
 The fact that I hadn't written a line of Sass prior to 2012 amazes me. The same applies to both Haml and CoffeeScript only to lesser degrees. 
 
