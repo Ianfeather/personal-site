@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "My Tools and Learnings of 2012"
+title: "Tools and Cultural Shifts of 2012"
 subtitle: "A link-ridden rundown of the last year"
 date: 2013-01-01 12:59
 comments: true
