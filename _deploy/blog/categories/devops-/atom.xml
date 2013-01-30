@@ -4,7 +4,7 @@
   <title><![CDATA[Category: devops, | Ian Feather]]></title>
   <link href="http://Ianfeather.github.com/ianfeatherV3/blog/categories/devops-/atom.xml" rel="self"/>
   <link href="http://Ianfeather.github.com/ianfeatherV3/"/>
-  <updated>2013-01-16T23:55:01+00:00</updated>
+  <updated>2013-01-30T00:07:50+00:00</updated>
   <id>http://Ianfeather.github.com/ianfeatherV3/</id>
   <author>
     <name><![CDATA[Ian Feather]]></name>
@@ -18,7 +18,13 @@
     <link href="http://Ianfeather.github.com/ianfeatherV3/tools-and-cultural-shifts-of-2012/"/>
     <updated>2013-01-01T12:59:00+00:00</updated>
     <id>http://Ianfeather.github.com/ianfeatherV3/tools-and-cultural-shifts-of-2012</id>
-    <content type="html"><![CDATA[<p>Our acceptance of competent 3rd party code and adoption of tools seems to have been the biggest shift in Front End Development over the past 12 months. The plague, and fear, of jQuery plugins have been replaced by the adoption of libraries like <a href="http://requirejs.org/">requireJS</a>, <a href="http://backbonejs.org/">backbone</a> and <a href="http://underscorejs.org/">underscore</a>. The take-up of pre-processors like <a href="http://sass-lang.com/">Sass</a>, <a href="http://lesscss.org/">Less</a> and <a href="http://coffeescript.org/">Coffeescript</a> have been staggering (and wrought by confusion and competition). The amount of new tools that have come out of the woodwork and required your <em>immediate attention</em> has been overwhelming.</p>
+    <content type="html"><![CDATA[<p class="blog-intro">Our acceptance of competent 3rd party code and adoption of tools seems to have been the biggest shift in Front End Development over the past 12 months. The plague, and fear, of jQuery plugins have been replaced by the adoption of libraries like <a href="http://requirejs.org/">requireJS</a>, <a href="http://backbonejs.org/">backbone</a> and <a href="http://underscorejs.org/">underscore</a>. The take-up of pre-processors like <a href="http://sass-lang.com/">Sass</a>, <a href="http://lesscss.org/">Less</a> and <a href="http://coffeescript.org/">Coffeescript</a> have been staggering (and wrought by confusion and competition). The amount of new tools that have come out of the woodwork and required your *immediate attention* has been overwhelming.</p>
+
+
+
+
+<blockquote class="pull-quote">For our current project we have deployed to production just over 2000 times in the past 7 months.</blockquote>
+
 
 <p>I joined Lonely Planet in January 2012 and the list of tools/libraries that I've been introduced to over the last year is chock full of names that would have baffled me before. If I were to list those which we use day-to-day at work it would include: <a href="https://github.com/etsy/statsd">StatsD</a>, <a href="http://graphite.wikidot.com/">Graphite</a>, <a href="https://github.com/paperlesspost/graphiti">Graphiti</a>, <a href="http://logstash.net/">LogStash</a>, <a href="http://www.elasticsearch.org/">Elastic Search</a>, <a href="http://www.akamai.com">Akamai</a>, <a href="https://github.com/lonelyplanet/fozzie">Fozzie</a>, <a href="http://nodejs.org/">Node</a>, <a href="http://expressjs.com/">Express</a>, <a href="https://github.com/guard/guard">Guard</a>, <a href="https://github.com/documentcloud/jammit">Jammit</a>, <a href="http://requirejs.org/">RequireJS</a>, <a href="https://github.com/lautis/uglifier">Uglifier</a>, <a href="http://gruntjs.com/">Grunt</a>, <a href="http://www.postgresql.org/">Postgres</a>, <a href="http://rubyonrails.org/">Rails</a>, <a href="http://wiki.nginx.org/Main">Nginx</a>, <a href="http://newrelic.com/">New Relic</a>, <a href="http://www.nagios.org/">Nagios</a>, <a href="http://www.pagerduty.com/">PagerDuty</a>, <a href="http://www.opscode.com/chef/">Chef</a>, <a href="http://wiki.opscode.com/display/chef/Knife">Knife</a>, <a href="http://aws.amazon.com/">AWS suite</a>, <a href="http://www.browserstack.com/">BrowserStack</a>, <a href="http://bem.info/method/">BEM</a>, <a href="http://sass-lang.com/">Sass</a>, <a href="http://haml.info/">Haml</a>, <a href="http://coffeescript.org/">Coffeescript</a>&hellip; and many more. The list goes on, and I've forgotten plenty. Exhausting right?</p>
 

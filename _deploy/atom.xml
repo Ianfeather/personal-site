@@ -4,7 +4,7 @@
   <title><![CDATA[Ian Feather]]></title>
   <link href="http://Ianfeather.github.com/ianfeatherV3/atom.xml" rel="self"/>
   <link href="http://Ianfeather.github.com/ianfeatherV3/"/>
-  <updated>2013-01-16T23:55:01+00:00</updated>
+  <updated>2013-01-30T00:07:50+00:00</updated>
   <id>http://Ianfeather.github.com/ianfeatherV3/</id>
   <author>
     <name><![CDATA[Ian Feather]]></name>
@@ -18,7 +18,13 @@
     <link href="http://Ianfeather.github.com/ianfeatherV3/tools-and-cultural-shifts-of-2012/"/>
     <updated>2013-01-01T12:59:00+00:00</updated>
     <id>http://Ianfeather.github.com/ianfeatherV3/tools-and-cultural-shifts-of-2012</id>
-    <content type="html"><![CDATA[<p>Our acceptance of competent 3rd party code and adoption of tools seems to have been the biggest shift in Front End Development over the past 12 months. The plague, and fear, of jQuery plugins have been replaced by the adoption of libraries like <a href="http://requirejs.org/">requireJS</a>, <a href="http://backbonejs.org/">backbone</a> and <a href="http://underscorejs.org/">underscore</a>. The take-up of pre-processors like <a href="http://sass-lang.com/">Sass</a>, <a href="http://lesscss.org/">Less</a> and <a href="http://coffeescript.org/">Coffeescript</a> have been staggering (and wrought by confusion and competition). The amount of new tools that have come out of the woodwork and required your <em>immediate attention</em> has been overwhelming.</p>
+    <content type="html"><![CDATA[<p class="blog-intro">Our acceptance of competent 3rd party code and adoption of tools seems to have been the biggest shift in Front End Development over the past 12 months. The plague, and fear, of jQuery plugins have been replaced by the adoption of libraries like <a href="http://requirejs.org/">requireJS</a>, <a href="http://backbonejs.org/">backbone</a> and <a href="http://underscorejs.org/">underscore</a>. The take-up of pre-processors like <a href="http://sass-lang.com/">Sass</a>, <a href="http://lesscss.org/">Less</a> and <a href="http://coffeescript.org/">Coffeescript</a> have been staggering (and wrought by confusion and competition). The amount of new tools that have come out of the woodwork and required your *immediate attention* has been overwhelming.</p>
+
+
+
+
+<blockquote class="pull-quote">For our current project we have deployed to production just over 2000 times in the past 7 months.</blockquote>
+
 
 <p>I joined Lonely Planet in January 2012 and the list of tools/libraries that I&#8217;ve been introduced to over the last year is chock full of names that would have baffled me before. If I were to list those which we use day-to-day at work it would include: <a href="https://github.com/etsy/statsd">StatsD</a>, <a href="http://graphite.wikidot.com/">Graphite</a>, <a href="https://github.com/paperlesspost/graphiti">Graphiti</a>, <a href="http://logstash.net/">LogStash</a>, <a href="http://www.elasticsearch.org/">Elastic Search</a>, <a href="http://www.akamai.com">Akamai</a>, <a href="https://github.com/lonelyplanet/fozzie">Fozzie</a>, <a href="http://nodejs.org/">Node</a>, <a href="http://expressjs.com/">Express</a>, <a href="https://github.com/guard/guard">Guard</a>, <a href="https://github.com/documentcloud/jammit">Jammit</a>, <a href="http://requirejs.org/">RequireJS</a>, <a href="https://github.com/lautis/uglifier">Uglifier</a>, <a href="http://gruntjs.com/">Grunt</a>, <a href="http://www.postgresql.org/">Postgres</a>, <a href="http://rubyonrails.org/">Rails</a>, <a href="http://wiki.nginx.org/Main">Nginx</a>, <a href="http://newrelic.com/">New Relic</a>, <a href="http://www.nagios.org/">Nagios</a>, <a href="http://www.pagerduty.com/">PagerDuty</a>, <a href="http://www.opscode.com/chef/">Chef</a>, <a href="http://wiki.opscode.com/display/chef/Knife">Knife</a>, <a href="http://aws.amazon.com/">AWS suite</a>, <a href="http://www.browserstack.com/">BrowserStack</a>, <a href="http://bem.info/method/">BEM</a>, <a href="http://sass-lang.com/">Sass</a>, <a href="http://haml.info/">Haml</a>, <a href="http://coffeescript.org/">Coffeescript</a>&hellip; and many more. The list goes on, and I&#8217;ve forgotten plenty. Exhausting right?</p>
 
@@ -142,7 +148,7 @@ Now, fortunately, I am in somewhat of a take it or leave it position though if I
   <tbody>
     <thead class="table-header">
       <th>&nbsp;</th> <th>Size</th> <th>Gzipped</th> <th>Compression</th>
-    </tr>
+    </thead>
     <tr>
       <td>Base</td>
       <td data-label="Size" class="val">26514</td>
@@ -211,7 +217,13 @@ Now, fortunately, I am in somewhat of a take it or leave it position though if I
 </ul>
 
 
-<p>Last Saturday, in a canyon of a hangover, I decided to <a href="http://ianfeather.co.uk/hangover-hack/">ditch my client work and just make something fun</a>. I&#8217;d encourage others to do the same. Maybe not <I>in favour</I> of client work but do try and make some time just to play around, experiment and recapture that feeling of why you first got enraptured by the web.</p>
+<p class="blog-intro">Last Saturday, in a canyon of a hangover, I decided to <a href="http://ianfeather.co.uk/hangover-hack/">ditch my client work and just make something fun</a>. I&#8217;d encourage others to do the same. Maybe not <I>in favour</I> of client work but do try and make some time just to play around, experiment and recapture that feeling of why you first got enraptured by the web.</p>
+
+
+
+
+<blockquote class="pull-quote">It&#8217;s fun to just mess about with code like no one is watching. That was the real lesson.</blockquote>
+
 
 <p>I gave myself a few guidelines:</p>
 
@@ -230,7 +242,7 @@ Now, fortunately, I am in somewhat of a take it or leave it position though if I
 
 <h2>What I learned?</h2>
 
-<p>That it&#8217;s fun to just mess about with code like no one is watching. That was the real lesson.</p>
+<p>It&#8217;s fun to just mess about with code like no one is watching. That was the real lesson.</p>
 
 <h2>What improvements would I make?</h2>
 
@@ -264,9 +276,13 @@ Now, fortunately, I am in somewhat of a take it or leave it position though if I
     <link href="http://Ianfeather.github.com/ianfeatherV3/a-cheat-sheet-for-the-terminal-averse/"/>
     <updated>2012-02-14T15:16:00+00:00</updated>
     <id>http://Ianfeather.github.com/ianfeatherV3/a-cheat-sheet-for-the-terminal-averse</id>
-    <content type="html"><![CDATA[<p>Did you know there&#8217;s a cheat sheet you can build into Terminal? It&#8217;s one that allows you to run complex git commands and change directories just by hitting a couple of keys. The best part is they&#8217;re keys that you define for yourself.</p>
+    <content type="html"><![CDATA[<p class="blog-intro">Did you know there&#8217;s a cheat sheet you can build into Terminal? It&#8217;s one that allows you to run complex git commands and change directories just by hitting a couple of keys. The best part is they&#8217;re keys that you define for yourself. If you&#8217;re a designer/front end developer who is wary and resistant to the growing impetus of the command line then you&#8217;re in luck.</p>
 
-<p>If you&#8217;re a designer/front end developer who is wary and resistant to the growing impetus of the command line then you&#8217;re in luck.</p>
+
+
+
+<blockquote class="pull-quote">By defining rules around my most common workflow routines I&#8217;ve been able to improve productivity whilst also taming an area that was previously foreign territory.</blockquote>
+
 
 <p>Cut to the source code: <a class="h6" href="https://github.com/Ianfeather/aliases/blob/master/aliases">https://github.com/Ianfeather/aliases/blob/master/aliases</a></p>
 
@@ -349,7 +365,13 @@ Would allow you to open up a file in iA Writer by running: ia myfile.md</li>
     <link href="http://Ianfeather.github.com/ianfeatherV3/why-online-brand-personality-matters-today/"/>
     <updated>2011-10-10T15:15:00+01:00</updated>
     <id>http://Ianfeather.github.com/ianfeatherV3/why-online-brand-personality-matters-today</id>
-    <content type="html"><![CDATA[<p>I&#8217;m constantly impressed by businesses who are switched on to the growing impact social media is having on our day to day decisions. Before we commit to anything, be it buying a watch or choosing a restaurant, there is a high chance that we have used the internet to qualify it to ourselves. Right now, that may be Google but in the future every restaurant, boutique shop, airline and fish and chip van will have been qualified using social media - whether they know it or not.</p>
+    <content type="html"><![CDATA[<p class="blog-intro">I&#8217;m constantly impressed by businesses who are switched on to the growing impact social media is having on our day to day decisions. Before we commit to anything, be it buying a watch or choosing a restaurant, there is a high chance that we have used the internet to qualify it to ourselves. Right now, that may be Google but in the future every restaurant, boutique shop, airline and fish and chip van will have been qualified using social media - whether they know it or not.</p>
+
+
+
+
+<blockquote class="pull-quote">Quality of a product will always shine through and results accompany it organically but those who can offer more, those who can package a product that reverberates online long after its purchase, will give the user an experience that will keep them returning.</blockquote>
+
 
 <p>And if you think the above examples were chosen at random: realise that companies in those extraordinarily diverse sectors are not just recognising the value of social media but thoroughly embracing it. See <a href="http://twitter.com/#!/BrixtonVillage">@brixtonvillage</a>, <a href="http://twitter.com/#!/klm">@klm</a> and <a href="http://twitter.com/#!/NoFishyBusiness">@nofishybusiness</a> for some stunning examples.</p>
 
@@ -383,7 +405,13 @@ Would allow you to open up a file in iA Writer by running: ia myfile.md</li>
     <link href="http://Ianfeather.github.com/ianfeatherV3/there-are-no-web-experts/"/>
     <updated>2011-07-18T15:12:00+01:00</updated>
     <id>http://Ianfeather.github.com/ianfeatherV3/there-are-no-web-experts</id>
-    <content type="html"><![CDATA[<p>In our ever changing industry we have at least one truth: there are no experts. Sure, in our midst are industry leaders, consultants, even the odd guru, but it must be remembered that no one has all the answers. For every good link, there are ten bad ones. For every insightful tweet there are a hundred misleading ones (not to mention a million mentioning iPads). And in the time between <a href="http://www.alistapart.com" title="A List Apart">alistapart</a> articles, there are maybe a thousand new individuals entering our industry who are learning from antiquated sources.</p>
+    <content type="html"><![CDATA[<p class="blog-intro">In our ever changing industry we have at least one truth: there are no experts. Sure, in our midst are industry leaders, consultants, even the odd guru, but it must be remembered that no one has all the answers. For every good link, there are ten bad ones. For every insightful tweet there are a hundred misleading ones (not to mention a million mentioning iPads). And in the time between <a href="http://www.alistapart.com" title="A List Apart">alistapart</a> articles, there are maybe a thousand new individuals entering our industry who are learning from antiquated sources.</p>
+
+
+
+
+<blockquote class="pull-quote">&#8220;The reason I know that I am intelligent is that I know that I know nothing&#8221;</blockquote>
+
 
 <p>During my time in the web industry I have already seen a change in attitudes towards this way of thinking. Early on I found opinion-driven rants permeated by hyperbolic advice all presented in absolute terms. There was no area for discussion. There was simply a right way and a thousand wrong ways.</p>
 
@@ -392,9 +420,6 @@ Would allow you to open up a file in iA Writer by running: ia myfile.md</li>
 <p>What makes our industry so exciting is that everyone has a voice and everyone has access to that voice. It also presents us with a bigger issue: how do we present the best information to those searching for it? How do newcomers to the industry catch up with the rapidly evolving entity that the web has become? Especially in the face of overwhelming adverse content?</p>
 
 <p>Well, as individuals, we can&#8217;t dictate these sources. We can only implore a critical mind. Socrates was quoted by Plato as saying:</p>
-
-<blockquote>&#8220;The reason I know that I am intelligent is that I know that I know nothing&#8221;</blockquote>
-
 
 <p>Paradoxical, and indeed an imprecise translation, or not, his expression is one that carries universal meaning. A potentially clearer translation (via Wikipedia) is &#8220;I am only wise insofar as what I don&#8217;t know, I don&#8217;t think I know&#8221;</p>
 
