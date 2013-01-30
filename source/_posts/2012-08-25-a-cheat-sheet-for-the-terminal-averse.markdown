@@ -7,9 +7,9 @@ comments: true
 categories: 
 ---
 
-Did you know there's a cheat sheet you can build into Terminal? It's one that allows you to run complex git commands and change directories just by hitting a couple of keys. The best part is they're keys that you define for yourself.
+<p class="blog-intro">Did you know there's a cheat sheet you can build into Terminal? It's one that allows you to run complex git commands and change directories just by hitting a couple of keys. The best part is they're keys that you define for yourself. If you're a designer/front end developer who is wary and resistant to the growing impetus of the command line then you're in luck.</p>
 
-If you're a designer/front end developer who is wary and resistant to the growing impetus of the command line then you're in luck.
+<blockquote class="pull-quote">By defining rules around my most common workflow routines I've been able to improve productivity whilst also taming an area that was previously foreign territory.</blockquote>
 
 Cut to the source code: <a class="h6" href="https://github.com/Ianfeather/aliases/blob/master/aliases">https://github.com/Ianfeather/aliases/blob/master/aliases</a>
 

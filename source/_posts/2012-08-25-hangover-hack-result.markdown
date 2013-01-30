@@ -9,7 +9,9 @@ categories:
 - <a class="btn btn-external btn-photo" href="http://ianfeather.co.uk/playground/image-play/">Use the app</a>
 - <a class="btn btn-external btn-github" href="https://github.com/Ianfeather/image-play">View the source code</a>
 
-Last Saturday, in a canyon of a hangover, I decided to <a href="http://ianfeather.co.uk/hangover-hack/">ditch my client work and just make something fun</a>. I'd encourage others to do the same. Maybe not <I>in favour</I> of client work but do try and make some time just to play around, experiment and recapture that feeling of why you first got enraptured by the web.
+<p class="blog-intro">Last Saturday, in a canyon of a hangover, I decided to <a href="http://ianfeather.co.uk/hangover-hack/">ditch my client work and just make something fun</a>. I'd encourage others to do the same. Maybe not <I>in favour</I> of client work but do try and make some time just to play around, experiment and recapture that feeling of why you first got enraptured by the web.</p>
+
+<blockquote class="pull-quote">It's fun to just mess about with code like no one is watching. That was the real lesson.</blockquote>
 
 I gave myself a few guidelines:
 
@@ -26,7 +28,7 @@ Once I had the gallery mode working on search I got distracted by the idea of us
 
 ## What I learned?
 
-That it's fun to just mess about with code like no one is watching. That was the real lesson. 
+It's fun to just mess about with code like no one is watching. That was the real lesson. 
 
 ## What improvements would I make?
 

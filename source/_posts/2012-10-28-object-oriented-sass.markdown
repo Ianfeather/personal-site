@@ -52,7 +52,7 @@ My main concern was that the gzipped file size would actually increase because o
   <tbody>
     <thead class="table-header">
       <th>&nbsp;</th> <th>Size</th> <th>Gzipped</th> <th>Compression</th>
-    </tr>
+    </thead>
     <tr>
       <td>Base</td>
       <td data-label="Size" class="val">26514</td>

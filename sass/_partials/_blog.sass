@@ -24,6 +24,10 @@
     color: white
     text-align: center
 
+.blog-intro
+  +at(800)
+    +columns(2)
+
 .blog-title
   @extend %heading-type-mobile
   @extend %margin-bottom-0
@@ -46,6 +50,10 @@
 
 .blog-headings
   @extend %margin-bottom-mid
+
+.pull-quote
+  margin: 50px 10px
+  font-weight: bold
 
 .post-date
   @extend %large-type

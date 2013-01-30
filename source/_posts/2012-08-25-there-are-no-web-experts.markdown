@@ -4,7 +4,9 @@ title: "There are no Web Experts"
 date: 2011-07-18 15:12
 comments: true
 ---
-In our ever changing industry we have at least one truth: there are no experts. Sure, in our midst are industry leaders, consultants, even the odd guru, but it must be remembered that no one has all the answers. For every good link, there are ten bad ones. For every insightful tweet there are a hundred misleading ones (not to mention a million mentioning iPads). And in the time between <a href="http://www.alistapart.com" title="A List Apart">alistapart</a> articles, there are maybe a thousand new individuals entering our industry who are learning from antiquated sources.
+<p class="blog-intro">In our ever changing industry we have at least one truth: there are no experts. Sure, in our midst are industry leaders, consultants, even the odd guru, but it must be remembered that no one has all the answers. For every good link, there are ten bad ones. For every insightful tweet there are a hundred misleading ones (not to mention a million mentioning iPads). And in the time between <a href="http://www.alistapart.com" title="A List Apart">alistapart</a> articles, there are maybe a thousand new individuals entering our industry who are learning from antiquated sources.</p>
+
+<blockquote class="pull-quote">"The reason I know that I am intelligent is that I know that I know nothing"</blockquote>
 
 During my time in the web industry I have already seen a change in attitudes towards this way of thinking. Early on I found opinion-driven rants permeated by hyperbolic advice all presented in absolute terms. There was no area for discussion. There was simply a right way and a thousand wrong ways.
 
@@ -13,8 +15,6 @@ Now more and more I feel like there has been a shift for the better, a trend of 
 What makes our industry so exciting is that everyone has a voice and everyone has access to that voice. It also presents us with a bigger issue: how do we present the best information to those searching for it? How do newcomers to the industry catch up with the rapidly evolving entity that the web has become? Especially in the face of overwhelming adverse content?
 
 Well, as individuals, we can't dictate these sources. We can only implore a critical mind. Socrates was quoted by Plato as saying:
-
-<blockquote>"The reason I know that I am intelligent is that I know that I know nothing"</blockquote>
 
 Paradoxical, and indeed an imprecise translation, or not, his expression is one that carries universal meaning. A potentially clearer translation (via Wikipedia) is "I am only wise insofar as what I don't know, I don't think I know"
 

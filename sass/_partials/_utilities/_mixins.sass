@@ -8,8 +8,13 @@
 @mixin font-size($sizeValue: 14)
   font-size: $sizeValue + px
   font-size: ($sizeValue / $base_font_size) + rem
-  
 
+@mixin columns($column-count: 2) 
+  -webkit-columns: $column-count
+  -moz-columns:    $column-count
+  -ms-columns:     $column-count
+  -o-columns:      $column-count
+  columns:         $column-count
 
 @mixin img($url, $color: transparent, $x:0px, $y:0px, $r:no-repeat)
   background: $color url($url) $r $x $y
