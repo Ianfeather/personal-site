@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Configure require.js to serve two files"
+title: "Configure requirejs to serve two files"
 written: "on the Victoria line"
 date: 2013-04-30 09:35
 comments: true
@@ -10,7 +10,7 @@ categories:
 
 ## The reason
 
-Why would you want to serve two javascript files rather than concatenating them? It's actually a common practice to leverage better caching of assets which are rarely updated.
+Why would you want to serve two javascript files rather than concatenating them? If you want to leverage better caching of assets which are rarely updated.
 
 At [Lonely Planet](http://www.lonelyplanet.com/england/london/hotels) our files are broken up into:
 
