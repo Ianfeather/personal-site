@@ -35,11 +35,11 @@ After much playing around with the requirejs config it was clear this was the wr
 ### require.js config:
 {% codeblock %}
 modules:
-  - name: 'appplication'
+  - name: 'application'
     exclude: ['core']
 {% endcodeblock %}
 
-### application.js:
+### application.js.coffee:
 {% codeblock %}
   require ['core', 'lib/application'], (Core, Application) ->
     Application = new Application()
@@ -66,7 +66,7 @@ modules:
 findNestedDependencies: true
 {% endcodeblock %}
 
-### application.js:
+### application.js.coffee:
 {% codeblock %}
 require ['core'], () ->
   require ['jquery', 'lib/application'], ($, Application)->
