@@ -39,11 +39,17 @@
         <lastmod>2013-01-30T00:02:01+00:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://Ianfeather.github.com/ianfeatherV3/configure-requirejs-to-serve-two-files/
+        </loc>
+        <lastmod>2013-04-30T10:59:03+01:00</lastmod>
+    </url>
+    <url>
         <loc>http://Ianfeather.github.com/ianfeatherV3/blog/archives/</loc>
-        <lastmod>2013-01-30T00:04:38+00:00</lastmod>
+        <lastmod>2013-04-30T10:59:03+01:00</lastmod>
     </url>
     <url>
         <loc>http://Ianfeather.github.com/ianfeatherV3/</loc>
-        <lastmod>2013-01-30T00:04:38+00:00</lastmod>
+        <lastmod>2013-04-30T10:59:03+01:00</lastmod>
     </url>
 </urlset>
