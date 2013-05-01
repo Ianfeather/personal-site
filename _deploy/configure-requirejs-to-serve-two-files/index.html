@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>There are no Web Experts - Ian Feather</title>
+  <title>Configure requirejs to serve two files - Ian Feather</title>
   <meta name="author" content="Ian Feather">
 
   
-  <meta name="description" content="There Are No Web Experts Written on Jul 18th, 2011 In our ever changing industry we have at least one truth: there are no experts. Sure, in our &hellip;">
+  <meta name="description" content="Configure Requirejs to Serve Two Files Written on the Victoria line on Apr 30th, 2013 The reason Why would you want to serve two javascript files &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://Ianfeather.github.com/ianfeatherV3/there-are-no-web-experts/">
+  <link rel="canonical" href="http://Ianfeather.github.com/ianfeatherV3/configure-requirejs-to-serve-two-files/">
   <link href="/ianfeatherV3/favicon.png" rel="icon">
   <link href="/ianfeatherV3/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script type="text/javascript">
@@ -75,7 +75,7 @@
   <header>
     <hgroup class="blog-headings">
       
-        <h1 class="blog-title">There Are No Web Experts</h1>
+        <h1 class="blog-title">Configure Requirejs to Serve Two Files</h1>
         
       
     </hgroup>
@@ -93,7 +93,7 @@
   
 
 
-<time datetime="2011-07-18T15:12:00+01:00" pubdate data-updated="true">Written  on Jul 18<span>th</span>, 2011</time>
+<time datetime="2013-04-30T09:35:00+01:00" pubdate data-updated="true">Written on the Victoria line on Apr 30<span>th</span>, 2013</time>
         
       </p>
     
@@ -103,40 +103,118 @@
 
 
 
-<div><p class="blog-intro">In our ever changing industry we have at least one truth: there are no experts. Sure, in our midst are industry leaders, consultants, even the odd guru, but it must be remembered that no one has all the answers. For every good link, there are ten bad ones. For every insightful tweet there are a hundred misleading ones (not to mention a million mentioning iPads). And in the time between <a href="http://www.alistapart.com" title="A List Apart">alistapart</a> articles, there are maybe a thousand new individuals entering our industry who are learning from antiquated sources.</p>
+<div><h2>The reason</h2>
+
+<p>Why would you want to serve two javascript files rather than concatenating them? If you want to leverage better caching of assets which are rarely updated.</p>
+
+<p>At <a href="http://www.lonelyplanet.com/england/london/hotels">Lonely Planet</a> our files are broken up into:</p>
+
+<ul>
+  <li>core.js - Common libs and abstractions(eg. jquery), header and footer code, analytics</li>
+  <li>application.js - The code responsible for everything between the header and footer</li>
+</ul>
 
 
+<p>Core.js is likely to never change so we want any repeat users to enjoy the benefit of strong browser caching. We serve this script appended with an MD5 hash so that we can invalidate the cache when it does finally get updated.</p>
+
+<h2>The background</h2>
+
+<p>We use the requirejs-rails port which includes the r.js optimiser. It does an awesome job of consolidating all your modules into one file which you load asynchronously using the requirejs script tag and a data-main attribute. The main focus seems to be web apps rather than traditional web sites and as a consequence there were very few resources available around the topic of serving more than one file.</p>
+
+<p>We wanted to use core.js to initialise the rest of the application once it had satisfied its own dependencies. The reason behind this was that core.js would then load jQuery before it was subsequently requested by application.js.</p>
+
+<p>After much playing around with the requirejs config it was clear this was the wrong approach. We were getting multiple files requested dynamically and it was becoming a headache. I knew there would be a simple solution and really it was just a matter of looking at it from the application side: core.js was really a dependency of application.js</p>
+
+<h2>The half-solution</h2>
+
+<h3>require.js config:</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>modules:
+</span><span class='line'>  - name: 'appplication'
+</span><span class='line'>    exclude: ['core']</span></code></pre></td></tr></table></div></figure>
 
 
-<blockquote class="pull-quote">&#8220;The reason I know that I am intelligent is that I know that I know nothing&#8221;</blockquote>
+<h3>application.js:</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>require ['core', 'lib/application'], (Core, Application) ->
+</span><span class='line'>    Application = new Application()</span></code></pre></td></tr></table></div></figure>
 
 
-<p>During my time in the web industry I have already seen a change in attitudes towards this way of thinking. Early on I found opinion-driven rants permeated by hyperbolic advice all presented in absolute terms. There was no area for discussion. There was simply a right way and a thousand wrong ways.</p>
+<p>Why this didn&#8217;t work? Application.js had dependencies which themselves depended on jQuery. Require loaded core and lib/application at the same time. This was the output:</p>
 
-<p>Now more and more I feel like there has been a shift for the better, a trend of discussion has developed over dictation. The question I find myself asking is: Has there actually been a culture shift or have I simply refined the sources?</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;script type="text/javascript" src="core.js">
+</span><span class='line'>&lt;script type="text/javascript" src="application.js">
+</span><span class='line'>&lt;script type="text/javascript" src="jquery.js"></span></code></pre></td></tr></table></div></figure>
 
-<p>What makes our industry so exciting is that everyone has a voice and everyone has access to that voice. It also presents us with a bigger issue: how do we present the best information to those searching for it? How do newcomers to the industry catch up with the rapidly evolving entity that the web has become? Especially in the face of overwhelming adverse content?</p>
 
-<p>Well, as individuals, we can&#8217;t dictate these sources. We can only implore a critical mind. Socrates was quoted by Plato as saying:</p>
+<p>Not bad, but we have an extra request to load jQuery.</p>
 
-<p>Paradoxical, and indeed an imprecise translation, or not, his expression is one that carries universal meaning. A potentially clearer translation (via Wikipedia) is &#8220;I am only wise insofar as what I don&#8217;t know, I don&#8217;t think I know&#8221;</p>
+<h2>The actual solution</h2>
 
-<p>This wisdom applies to all of us, no matter our profession or position within it. To all those starting out in the industry, if by chance you have stumbled across this blog, my hope is that you question everything. There are too many sources tweeting or blogging their philosophy of the web as gospel when there is no gospel, not in the online world. No one knows where the web is going because we&#8217;re all steering it collectively.</p>
+<h3>require.js config:</h3>
 
-<p>And it is changing for the better: content-first, mobile, html5, css3 and the potential for the elimination of older browsers have us all excited. My concern is that we are running away from teaching the fundamentals to anyone entering our industry.</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>modules:
+</span><span class='line'>  - name: 'appplication'
+</span><span class='line'>    exclude: ['core']
+</span><span class='line'>
+</span><span class='line'>findNestedDependencies: true</span></code></pre></td></tr></table></div></figure>
 
-<p>I welcome your feedback.</p>
 
-<h3>Resources:</h3>
+<h3>application.js:</h3>
 
-<p><a href="http://www.alistapart.com" title="A List Apart">http://www.alistapart.com</a></p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>require ['core'], () ->
+</span><span class='line'>  require ['jquery', 'lib/application'], ($, Application)->
+</span><span class='line'>    $ ->
+</span><span class='line'>      application = new Application()</span></code></pre></td></tr></table></div></figure>
 
-<p>It&#8217;s not for me to dictate where you should go for knowledge. That said, if you are new to the industry and want a reliable source I can offer no better than alistapart. Some of the content may be more advanced and thematic than you are searching for but stick with it, follow the authors on twitter, follow those they reference and build yourself up a reliable array of sources. And then question all of them!</p>
 
-<p>And here are a couple of excellent resources if per chance you are starting out in the Front End Development Game. I wish they had been around, or I had been aware of them, when I first began:</p>
+<h3>Output:</h3>
 
-<p><a href="http://csswizardry.com/web-design+/" title="Web Design Plus">http://csswizardry.com/web-design+/</a> via @csswizardry
-<a href="http://taitems.github.com/Front-End-Development-Guidelines/" title="Taitems Front End Development Guidelines">http://taitems.github.com/Front-End-Development-Guidelines/</a> via @taitems</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>// Dynamically created
+</span><span class='line'>  &lt;script type="text/javascript" src="core.js">
+</span><span class='line'>  &lt;script type="text/javascript" src="application.js">
+</span><span class='line'>
+</span><span class='line'>  // On the page
+</span><span class='line'>  &lt;script type="text/javascript" src="require.js" data-main="application.js"></span></code></pre></td></tr></table></div></figure>
+
+
+<p>Running r.js will optimise core.js separately from application.js. Once it executes, the process will happen like this:</p>
+
+<ul>
+<li>Try to find core.js</li>
+<li>We don&apos;t have it bundled so load the optimised core.js dynamically</li>
+<li>Once core.js is loaded we move into the require function</li>
+<li>Try to find jQuery. Requirejs knows it is already loaded.</li>
+<li>Try to find lib/application.js. This is bundled into application.js from the r.js optimisation step.</li>
+<li>Move into the nested require function</li>
+<li>Initialise application()</li>
+</ul>
+
+
+<p>That&apos;s all there is to it. We can now specify any rarely used modules as a dependency of core.js, leverage the browser cache, and make faster websites.</p>
 </div>
 
 

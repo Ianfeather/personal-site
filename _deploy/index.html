@@ -9,7 +9,7 @@
   <meta name="author" content="Ian Feather">
 
   
-  <meta name="description" content="Tools and Cultural Shifts of 2012 A link-ridden rundown of the last year Written on Jan 1st, 2013 Our acceptance of competent 3rd party code and &hellip;">
+  <meta name="description" content="Configure Requirejs to Serve Two Files Written on the Victoria line on Apr 30th, 2013 The reason Why would you want to serve two javascript files &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -71,6 +71,160 @@
 
         <div class="blog-index blog-area">
   
+  
+  
+    <article class="blog-post">
+      
+
+  <header>
+    <hgroup class="blog-headings">
+      
+        <h1 class="blog-title"><a href="/ianfeatherV3/configure-requirejs-to-serve-two-files/">Configure Requirejs to Serve Two Files</a></h1>
+        
+      
+    </hgroup>
+    
+      <p class="post-date">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-30T09:35:00+01:00" pubdate data-updated="true">Written on the Victoria line on Apr 30<span>th</span>, 2013</time>
+        
+      </p>
+    
+    
+  </header>
+
+
+
+
+  <div><h2>The reason</h2>
+
+<p>Why would you want to serve two javascript files rather than concatenating them? If you want to leverage better caching of assets which are rarely updated.</p>
+
+<p>At <a href="http://www.lonelyplanet.com/england/london/hotels">Lonely Planet</a> our files are broken up into:</p>
+
+<ul>
+  <li>core.js - Common libs and abstractions(eg. jquery), header and footer code, analytics</li>
+  <li>application.js - The code responsible for everything between the header and footer</li>
+</ul>
+
+
+<p>Core.js is likely to never change so we want any repeat users to enjoy the benefit of strong browser caching. We serve this script appended with an MD5 hash so that we can invalidate the cache when it does finally get updated.</p>
+
+<h2>The background</h2>
+
+<p>We use the requirejs-rails port which includes the r.js optimiser. It does an awesome job of consolidating all your modules into one file which you load asynchronously using the requirejs script tag and a data-main attribute. The main focus seems to be web apps rather than traditional web sites and as a consequence there were very few resources available around the topic of serving more than one file.</p>
+
+<p>We wanted to use core.js to initialise the rest of the application once it had satisfied its own dependencies. The reason behind this was that core.js would then load jQuery before it was subsequently requested by application.js.</p>
+
+<p>After much playing around with the requirejs config it was clear this was the wrong approach. We were getting multiple files requested dynamically and it was becoming a headache. I knew there would be a simple solution and really it was just a matter of looking at it from the application side: core.js was really a dependency of application.js</p>
+
+<h2>The half-solution</h2>
+
+<h3>require.js config:</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>modules:
+</span><span class='line'>  - name: 'appplication'
+</span><span class='line'>    exclude: ['core']</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>application.js:</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>require ['core', 'lib/application'], (Core, Application) ->
+</span><span class='line'>    Application = new Application()</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Why this didn&#8217;t work? Application.js had dependencies which themselves depended on jQuery. Require loaded core and lib/application at the same time. This was the output:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;script type="text/javascript" src="core.js">
+</span><span class='line'>&lt;script type="text/javascript" src="application.js">
+</span><span class='line'>&lt;script type="text/javascript" src="jquery.js"></span></code></pre></td></tr></table></div></figure>
+
+
+<p>Not bad, but we have an extra request to load jQuery.</p>
+
+<h2>The actual solution</h2>
+
+<h3>require.js config:</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>modules:
+</span><span class='line'>  - name: 'appplication'
+</span><span class='line'>    exclude: ['core']
+</span><span class='line'>
+</span><span class='line'>findNestedDependencies: true</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>application.js:</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>require ['core'], () ->
+</span><span class='line'>  require ['jquery', 'lib/application'], ($, Application)->
+</span><span class='line'>    $ ->
+</span><span class='line'>      application = new Application()</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Output:</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>// Dynamically created
+</span><span class='line'>  &lt;script type="text/javascript" src="core.js">
+</span><span class='line'>  &lt;script type="text/javascript" src="application.js">
+</span><span class='line'>
+</span><span class='line'>  // On the page
+</span><span class='line'>  &lt;script type="text/javascript" src="require.js" data-main="application.js"></span></code></pre></td></tr></table></div></figure>
+
+
+<p>Running r.js will optimise core.js separately from application.js. Once it executes, the process will happen like this:</p>
+
+<ul>
+<li>Try to find core.js</li>
+<li>We don&apos;t have it bundled so load the optimised core.js dynamically</li>
+<li>Once core.js is loaded we move into the require function</li>
+<li>Try to find jQuery. Requirejs knows it is already loaded.</li>
+<li>Try to find lib/application.js. This is bundled into application.js from the r.js optimisation step.</li>
+<li>Move into the nested require function</li>
+<li>Initialise application()</li>
+</ul>
+
+
+<p>That&apos;s all there is to it. We can now specify any rarely used modules as a dependency of core.js, leverage the browser cache, and make faster websites.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article class="blog-post">
@@ -322,57 +476,6 @@ Now, fortunately, I am in somewhat of a take it or leave it position though if I
 
     </article>
   
-  
-    <article class="blog-post">
-      
-
-  <header>
-    <hgroup class="blog-headings">
-      
-        <h1 class="blog-title"><a href="/ianfeatherV3/the-neglected-medium-can-we-replicate-creative-communication-online/">The Neglected Medium</a></h1>
-        
-          <h2 class="blog-subtitle">Can we replicate creative communication online?</h2>
-        
-      
-    </hgroup>
-    
-      <p class="post-date">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-04T15:17:00+01:00" pubdate data-updated="true">Written whilst drunk on Jun 4<span>th</span>, 2012</time>
-        
-      </p>
-    
-    
-  </header>
-
-
-
-
-  <div><p>The smoke hung to the ceiling, the smokiness of the whisky clung to the back of our throats. The comfort of the walls liberated our expression. We were conspiring, and madness dared to precede us.</p>
-
-<p>Conspiring on change, deliberating on decision, gathering our thoughts for the future of the web: as we could each see it. Tongues flew fast on the back of ideas and tangents. We bounced from process to product, from theory to theatre and concepts had their potential amplified by each discourse.</p>
-
-<p>Some of us sat up, stood, paced, drew wildly on the walls. Others stared at the floor and shook their heads, looking up to interject in the vein of &#8216;Exactly!&#8217;, &#8216;Tell that to the world&#8217; or &#8216;Pass me the bottle&#8217;.</p>
-
-<p>Can we ever recreate this fast flowing and fluid communication through a remote medium? Do remote teams suffer as a consequence?</p>
-</div>
-  
-  
-
-
-    </article>
-  
 </div>
 
 
@@ -383,6 +486,10 @@ Now, fortunately, I am in somewhat of a take it or leave it position though if I
               <section>
   <h1 class="blog-subtitle">Recent Posts</h1>
   <ul id="js-recent-posts">
+    
+      <li class="post">
+        <a href="/ianfeatherV3/configure-requirejs-to-serve-two-files/">Configure requirejs to serve two files</a>
+      </li>
     
       <li class="post">
         <a href="/ianfeatherV3/tools-and-cultural-shifts-of-2012/">Tools and Cultural Shifts of 2012</a>
@@ -398,10 +505,6 @@ Now, fortunately, I am in somewhat of a take it or leave it position though if I
     
       <li class="post">
         <a href="/ianfeatherV3/hangover-hack-result/">Hangover Hack Result</a>
-      </li>
-    
-      <li class="post">
-        <a href="/ianfeatherV3/hangover-hack/">Hangover Hack</a>
       </li>
     
     <li class="view-all-posts"><a href="/ianfeatherV3/blog/archives">View all</a></li>
