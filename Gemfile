@@ -5,6 +5,5 @@ group :development do
   gem 'rack'
   gem 'jekyll'
   gem 'haml'
+  gem 'compass'
 end
-
-# gem 'sinatra', '~> 1.3.2'

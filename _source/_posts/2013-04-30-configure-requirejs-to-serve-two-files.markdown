@@ -32,14 +32,14 @@ After much playing around with the requirejs config it was clear this was the wr
 ## The half-solution
 
 ### require.js config:
-<pre><code class="language-yaml">
+<pre><code class="language-bash">
 modules:
   - name: 'application'
     exclude: ['core']
 </code></pre>
 
 ### application.js.coffee:
-<pre><code class="language-coffee">
+<pre><code class="language-coffeescript">
   require ['core', 'lib/application'], (Core, Application) ->
     Application = new Application()
 </code></pre>
@@ -54,16 +54,16 @@ Not bad, but we have an extra request to load jQuery when really we wanted it to
 ## The actual solution
 
 ### require.js config:
-<pre><code class="language-yaml">
-modules:
-  - name: 'appplication'
-    exclude: ['core']
+<pre><code class="language-bash">
+  modules:
+    - name: 'appplication'
+      exclude: ['core']
 
-findNestedDependencies: true
+  findNestedDependencies: true
 </code></pre>
 
 ### application.js.coffee:
-<pre><code class="language-coffee">
+<pre><code class="language-coffeescript">
 require ['core'], () ->
   require ['jquery', 'lib/application'], ($, Application)->
     $ ->
