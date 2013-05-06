@@ -14,8 +14,7 @@ The more I’ve been dabbling with the placeholder approach though; the more I c
 
 For those who haven't yet used them, selectors with placeholders will not be included in the CSS output but they are able to be extended. For example, using everyone’s favourite media object would mean we no longer have to chain the .media class to benefit from its abstraction and we can make sure the media declaration won't be output unless used:
 
-<pre><code class="language-sass">
-%media
+<pre><code class="language-scss">%media
   … the media object …
 
 .comment-block

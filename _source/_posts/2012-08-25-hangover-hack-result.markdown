@@ -5,11 +5,12 @@ date: 2012-03-24 15:17
 comments: true
 categories: 
 ---
+<ul>
+<li><a class="btn btn-external btn-photo" href="http://ianfeather.co.uk/playground/image-play/">Use the app</a></li>
+<li><a class="btn btn-external btn-github" href="https://github.com/Ianfeather/image-play">View the source code</a></li>
+</ul>
 
-- <a class="btn btn-external btn-photo" href="http://ianfeather.co.uk/playground/image-play/">Use the app</a>
-- <a class="btn btn-external btn-github" href="https://github.com/Ianfeather/image-play">View the source code</a>
-
-<p class="blog-intro">Last Saturday, in a canyon of a hangover, I decided to [ditch my client work and just make something fun](http://ianfeather.co.uk/hangover-hack/). I'd encourage others to do the same. Maybe not <I>in favour</I> of client work but do try and make some time just to play around, experiment and recapture that feeling of why you first got enraptured by the web.</p>
+Last Saturday, in a canyon of a hangover, I decided to [ditch my client work and just make something fun](http://ianfeather.co.uk/hangover-hack/). I'd encourage others to do the same. Maybe not <I>in favour</I> of client work but do try and make some time just to play around, experiment and recapture that feeling of why you first got enraptured by the web.
 
 <blockquote class="pull-quote">It's fun to just mess about with code like no one is watching. That was the real lesson.</blockquote>
 
