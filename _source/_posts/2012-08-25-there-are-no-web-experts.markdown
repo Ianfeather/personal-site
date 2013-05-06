@@ -34,5 +34,5 @@ It's not for me to dictate where you should go for knowledge. That said, if you 
 
 And here are a couple of excellent resources if per chance you are starting out in the Front End Development Game. I wish they had been around, or I had been aware of them, when I first began:
 
-<a href="http://csswizardry.com/web-design+/" title="Web Design Plus">http://csswizardry.com/web-design+/</a> via @csswizardry
-<a href="http://taitems.github.com/Front-End-Development-Guidelines/" title="Taitems Front End Development Guidelines">http://taitems.github.com/Front-End-Development-Guidelines/</a> via @taitems
+<a href="http://csswizardry.com/web-design+/" title="Web Design Plus">http://csswizardry.com/web-design+/</a>
+<a href="http://taitems.github.com/Front-End-Development-Guidelines/" title="Taitems Front End Development Guidelines">http://taitems.github.com/Front-End-Development-Guidelines/</a>
