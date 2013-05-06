@@ -32,16 +32,14 @@ After much playing around with the requirejs config it was clear this was the wr
 ## The half-solution
 
 ### require.js config:
-<pre><code class="language-bash">
-modules:
+<pre><code class="language-bash">modules:
   - name: 'application'
     exclude: ['core']
 </code></pre>
 
 ### application.js.coffee:
-<pre><code class="language-coffeescript">
-  require ['core', 'lib/application'], (Core, Application) ->
-    Application = new Application()
+<pre><code class="language-coffeescript">require ['core', 'lib/application'], (Core, Application) ->
+  Application = new Application()
 </code></pre>
 
 Why this didn't work? Application.js had dependencies which themselves depended on jQuery. Require loaded core and lib/application at the same time leading to three scripts being loaded by requirejs:
@@ -54,21 +52,21 @@ Not bad, but we have an extra request to load jQuery when really we wanted it to
 ## The actual solution
 
 ### require.js config:
-<pre><code class="language-bash">
-  modules:
-    - name: 'appplication'
-      exclude: ['core']
+<pre><code class="language-bash">modules:
+  - name: 'appplication'
+    exclude: ['core']
 
-  findNestedDependencies: true
+findNestedDependencies: true
 </code></pre>
 
 ### application.js.coffee:
-<pre><code class="language-coffeescript">
-require ['core'], () ->
+<pre>
+<code class="language-coffeescript">require ['core'], () ->
   require ['jquery', 'lib/application'], ($, Application)->
     $ ->
       application = new Application()
-</code></pre>
+</code>
+</pre>
 
 ### Output:
 - core.js
