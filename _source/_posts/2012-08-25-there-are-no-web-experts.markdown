@@ -4,7 +4,7 @@ title: "There are no Web Experts"
 date: 2011-07-18 15:12
 comments: true
 ---
-<p class="blog-intro">In our ever changing industry we have at least one truth: there are no experts. Sure, in our midst are industry leaders, consultants, even the odd guru, but it must be remembered that no one has all the answers. For every good link, there are ten bad ones. For every insightful tweet there are a hundred misleading ones (not to mention a million mentioning iPads). And in the time between <a href="http://www.alistapart.com" title="A List Apart">alistapart</a> articles, there are maybe a thousand new individuals entering our industry who are learning from antiquated sources.</p>
+<p class="blog-intro">In our ever changing industry we have at least one truth: there are no experts. Sure, in our midst are industry leaders, consultants, even the odd guru, but it must be remembered that no one has all the answers. For every good link, there are ten bad ones. For every insightful tweet there are a hundred misleading ones (not to mention a million mentioning iPads). And in the time between [alistapart](http://www.alistapart.com) articles, there are maybe a thousand new individuals entering our industry who are learning from antiquated sources.</p>
 
 <blockquote class="pull-quote">"The reason I know that I am intelligent is that I know that I know nothing"</blockquote>
 
@@ -23,7 +23,6 @@ This wisdom applies to all of us, no matter our profession or position within it
 And it is changing for the better: content-first, mobile, html5, css3 and the potential for the elimination of older browsers have us all excited. My concern is that we are running away from teaching the fundamentals to anyone entering our industry.
 
 I welcome your feedback.
-
 
 
 ### Resources:

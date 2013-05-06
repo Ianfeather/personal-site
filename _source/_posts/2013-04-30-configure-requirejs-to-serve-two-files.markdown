@@ -14,10 +14,9 @@ Why would you want to serve two javascript files rather than concatenating them?
 
 At [Lonely Planet](http://www.lonelyplanet.com/england/london/hotels) our files are broken up into:
 
-<ul>
-  <li>core.js - Common libs and abstractions(eg. jquery), header and footer code, analytics</li>
-  <li>application.js - The code responsible for everything between the header and footer</li>
-</ul>
+- core.js - Common libs and abstractions(eg. jquery), header and footer code, analytics</li>
+- application.js - The code responsible for everything between the header and footer</li>
+
 
 Core.js is likely to never change so we want any repeat users to enjoy the benefit of strong browser caching. We serve this script appended with an MD5 hash so that we can invalidate the cache when it does finally get updated.
 
@@ -33,67 +32,58 @@ After much playing around with the requirejs config it was clear this was the wr
 ## The half-solution
 
 ### require.js config:
-{% codeblock %}
+<pre><code class="language-yaml">
 modules:
   - name: 'application'
     exclude: ['core']
-{% endcodeblock %}
+</code></pre>
 
 ### application.js.coffee:
-{% codeblock %}
+<pre><code class="language-coffee">
   require ['core', 'lib/application'], (Core, Application) ->
     Application = new Application()
-{% endcodeblock %}
+</code></pre>
 
-Why this didn't work? Application.js had dependencies which themselves depended on jQuery. Require loaded core and lib/application at the same time. This was the output:
+Why this didn't work? Application.js had dependencies which themselves depended on jQuery. Require loaded core and lib/application at the same time leading to three scripts being loaded by requirejs:
+- core.js
+- application.js
+- jquery.js
 
-{% codeblock %}
-<script type="text/javascript" src="core.js">
-<script type="text/javascript" src="application.js">
-<script type="text/javascript" src="jquery.js">
-{% endcodeblock %}
-
-Not bad, but we have an extra request to load jQuery.
+Not bad, but we have an extra request to load jQuery when really we wanted it to be included in core.js
 
 ## The actual solution
 
 ### require.js config:
-{% codeblock %}
+<pre><code class="language-yaml">
 modules:
   - name: 'appplication'
     exclude: ['core']
 
 findNestedDependencies: true
-{% endcodeblock %}
+</code></pre>
 
 ### application.js.coffee:
-{% codeblock %}
+<pre><code class="language-coffee">
 require ['core'], () ->
   require ['jquery', 'lib/application'], ($, Application)->
     $ ->
       application = new Application()
-{% endcodeblock %}
+</code></pre>
 
 ### Output:
-{% codeblock %}
-  // Dynamically created
-  <script type="text/javascript" src="core.js">
-  <script type="text/javascript" src="application.js">
-
-  // On the page
-  <script type="text/javascript" src="require.js" data-main="application.js">
-{% endcodeblock %}
+- core.js
+- application.js
 
 Running r.js will optimise core.js separately from application.js. Once it executes, the process will happen like this:
 
-<ul>
-<li>Try to find core.js</li>
-<li>We don&apos;t have it bundled so load the optimised core.js dynamically</li>
-<li>Once core.js is loaded we move into the require function</li>
-<li>Try to find jQuery. Requirejs knows it is already loaded.</li>
-<li>Try to find lib/application.js. This is bundled into application.js from the r.js optimisation step.</li>
-<li>Move into the nested require function</li>
-<li>Initialise application()</li>
-</ul>
+
+- Try to find core.js
+- We don&apos;t have it bundled so load the optimised core.js dynamically
+- Once core.js is loaded we move into the require function
+- Try to find jQuery. Requirejs knows it is already loaded.
+- Try to find lib/application.js. This is bundled into application.js from the r.js optimisation step.
+- Move into the nested require function
+- Initialise application()
+
 
 That&apos;s all there is to it. We can now specify any rarely used modules as a dependency of core.js, leverage the browser cache, and make faster websites.

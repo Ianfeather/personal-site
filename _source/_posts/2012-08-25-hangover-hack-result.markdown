@@ -9,7 +9,7 @@ categories:
 - <a class="btn btn-external btn-photo" href="http://ianfeather.co.uk/playground/image-play/">Use the app</a>
 - <a class="btn btn-external btn-github" href="https://github.com/Ianfeather/image-play">View the source code</a>
 
-<p class="blog-intro">Last Saturday, in a canyon of a hangover, I decided to <a href="http://ianfeather.co.uk/hangover-hack/">ditch my client work and just make something fun</a>. I'd encourage others to do the same. Maybe not <I>in favour</I> of client work but do try and make some time just to play around, experiment and recapture that feeling of why you first got enraptured by the web.</p>
+<p class="blog-intro">Last Saturday, in a canyon of a hangover, I decided to [ditch my client work and just make something fun](http://ianfeather.co.uk/hangover-hack/). I'd encourage others to do the same. Maybe not <I>in favour</I> of client work but do try and make some time just to play around, experiment and recapture that feeling of why you first got enraptured by the web.</p>
 
 <blockquote class="pull-quote">It's fun to just mess about with code like no one is watching. That was the real lesson.</blockquote>
 
@@ -36,4 +36,4 @@ It took around 6 hours to make, although I split that time with 6 nations rugby,
 
 Maybe I'll add that in the future but it's more likely I'll just build something new. Either way, in the future, I'll definitely be building something just for the sake of it.
 
-<a href="http://ianfeather.co.uk/playground/image-play/">Play around with the end result</a>
+[Play around with the end result](http://ianfeather.co.uk/playground/image-play)

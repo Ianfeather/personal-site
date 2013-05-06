@@ -14,13 +14,13 @@ The more I’ve been dabbling with the placeholder approach though; the more I c
 
 For those who haven't yet used them, selectors with placeholders will not be included in the CSS output but they are able to be extended. For example, using everyone’s favourite media object would mean we no longer have to chain the .media class to benefit from its abstraction and we can make sure the media declaration won't be output unless used:
 
-{% codeblock %}
+<pre><code class="language-sass">
 %media
   … the media object …
 
 .comment-block
   @extend %media
-{% endcodeblock %}
+</code></pre>
 
 Effectively what this allows us to do is construct our css objects in our css as opposed to in the markup. There are definitely pros and cons to this approach and all could be subjective depending on your existing codebase and workflow. I've highlighted some below but I'd be keen to hear of any that I have missed.
 

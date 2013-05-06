@@ -13,11 +13,11 @@ Sectioning content requires a heading or it will appear in the document outline 
 <div class="blog-grid">
   <div class="column">
     <h3>bostonglobe.com</h3>
-    {% img /images/boston-globe-outline.png %}
+    <img src="/images/boston-globe-outline.png" />
   </div>
   <div class="column">
     <h3>smashingmagazine.com</h3>
-    {% img /images/smashing-magazine-outline.png %}
+    <img src="/images/smashing-magazine-outline.png" />
   </div>
 </div>
 
@@ -29,20 +29,17 @@ It is worth noting at this point that VoiceOver (I haven't tested other screen r
 
 This leaves you with a few options for marking up your navigation:
 
-<ul>
-  <li>A non html5 element. Using a <em>div</em> or a <em>ul</em> will not affect the document outline.</li>
-  <li>A non html5 element with an aria navigation role. Maybe the best of both worlds but at the expense of not following the latest specs.</li>
-  <li><em>nav</em> with a heading. If you want to use the more semantic <em>nav</em> you could use a heading within, which will title your navigation in the outline. If it doesn't fit your design you can always visually hide it. If you're doing this though, should you need to be jumping through these hoops?</li>
-  <li><em>nav</em> - Just live with having untitled navigation</li>
-</ul>
 
-Which do you think is currently the most practical? More importantly, is the spec serving the majority of use cases with <em>nav</em> being sectioning content?
+- A non html5 element. Using a *div* or a *ul* will not affect the document outline.
+- A non html5 element with an aria navigation role. Maybe the best of both worlds but at the expense of not following the latest specs.
+- *nav* with a heading. If you want to use the more semantic *nav* you could use a heading within, which will title your navigation in the outline. If it doesn't fit your design you can always visually hide it. If you're doing this though, should you need to be jumping through these hoops?
+- *nav* - Just live with having untitled navigation
+
+Which do you think is currently the most practical? More importantly, is the spec serving the majority of use cases with *nav* being sectioning content?
 
 
 
 ### Handy resources
 
-<ul>
-  <li><a href="http://html5doctor.com/outlines/">http://html5doctor.com/outlines/</a></li>
-  <li><a href="http://coding.smashingmagazine.com/2011/08/16/html5-and-the-document-outlining-algorithm/">http://coding.smashingmagazine.com/2011/08/16/html5-and-the-document-outlining-algorithm/</a></li>
-</ul>
+- [http://html5doctor.com/outlines/](http://html5doctor.com/outlines/)
+- [http://coding.smashingmagazine.com/2011/08/16/html5-and-the-document-outlining-algorithm/](http://coding.smashingmagazine.com/2011/08/16/html5-and-the-document-outlining-algorithm/)

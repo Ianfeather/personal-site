@@ -12,16 +12,20 @@
 
         {{ content | expand_urls: root_url }}
 
-        {% unless page.sidebar == false %}
           <aside class="sidebar">
-
-            {% if site.post_asides.size %}
-              {% include_array post_asides %}
-            {% else %}
-              {% include_array default_asides %}
-            {% endif %}
+            <section>
+              <h1 class="blog-subtitle">Recent Posts</h1>
+              <ul id="js-recent-posts">
+                {% for post in site.posts limit: site.recent_posts %}
+                  <li class="post">
+                    <a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a>
+                  </li>
+                {% endfor %}
+                <li class="view-all-posts"><a href="{{ root_url }}/blog/archives">View all</a></li>
+              </ul>
+            </section>
+            
           </aside>
-        {% endunless %}
       </div>
 
     
@@ -31,7 +35,6 @@
 
     <footer class="main-footer" role="contentinfo">{% include footer.html %}</footer>
 
-    {% include after_footer.html %}
 
 </body>
 
