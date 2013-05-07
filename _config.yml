@@ -20,8 +20,8 @@ email: info@ianfeather.co.uk
 # If publishing to a subdirectory as in http://site.com/project set 'root: /project'
 # root: /personal-site
 permalink: /:title/
-source: _source
-destination: _site
+source: source
+destination: site
 include: ['.htaccess']
 markdown: maruku
 
