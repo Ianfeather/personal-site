@@ -13,11 +13,11 @@ Sectioning content requires a heading or it will appear in the document outline 
 <div class="blog-grid">
   <div class="column">
     <h3>bostonglobe.com</h3>
-    <img src="/images/boston-globe-outline.png" />
+    <img src="{{ root_url }}/images/boston-globe-outline.png" />
   </div>
   <div class="column">
     <h3>smashingmagazine.com</h3>
-    <img src="/images/smashing-magazine-outline.png" />
+    <img src="{{ root_url }}/images/smashing-magazine-outline.png" />
   </div>
 </div>
 
