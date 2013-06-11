@@ -1,1 +1,0 @@
-# New site architecture powered by Octopress
