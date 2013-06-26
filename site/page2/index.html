@@ -19,13 +19,11 @@
   
     
       
-        Object Oriented Sass
+        Tools and Cultural Shifts of 2012
         
-          A study into performance implications
+          A link-ridden rundown of the last year
         
-      
-    
-  ...">
+...">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -35,8 +33,8 @@
 
   
   <link rel="canonical" href="http://Ianfeather.github.com/ianfeatherV3/page2/">
-  <link href="/personal-site/favicon.png" rel="icon">
-  <link href="/personal-site/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script type="text/javascript">
     (function() {
       var config = {
@@ -73,19 +71,122 @@
       <div id="content" class="content-inner">
         <header role="banner" class="main-header"><div class="mark">
   <hgroup>
-    <h1 class="blog-title"><a href="/personal-site/">Ian Feather</a></h1>
+    <h1 class="blog-title"><a href="/">Ian Feather</a></h1>
     
       <h2 class="blog-subtitle">Code &amp; literature</h2>
     
   </hgroup>
-  <nav class="contact-links">
+  <div class="contact-links">
     <a href="https://twitter.com/ianfeather" class="ext-sprite ext-twitter">Twitter</a>
     <a href="https://github.com/Ianfeather" class="ext-sprite ext-github">Github</a>
-  </nav>
+  </div>
 </div></header>
 
         <div class="blog-index blog-area">
   
+  
+  
+    <article class="blog-post">
+      
+
+  <header>
+    <hgroup class="blog-headings">
+      
+        <h1 class="blog-title"><a href="/tools-and-cultural-shifts-of-2012/">Tools and Cultural Shifts of 2012</a></h1>
+        
+          <h2 class="blog-subtitle">A link-ridden rundown of the last year</h2>
+        
+      
+    </hgroup>
+    
+      <p class="post-date">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-01 12:59:00 -0700" pubdate data-updated="true">Written  on 01 January 2013</time>
+        
+      </p>
+    
+    
+  </header>
+
+
+
+
+  <div><p class='blog-intro'>Our acceptance of competent 3rd party code and adoption of tools seems to have been the biggest shift in Front End Development over the past 12 months. The plague, and fear, of jQuery plugins have been replaced by the adoption of libraries like [requireJS](http://requirejs.org/), [backbone](http://backbonejs.org/) and [underscore](http://underscorejs.org/). The take-up of pre-processors like [Sass](http://sass-lang.com/), [Less](http://lesscss.org/) and [Coffeescript](http://coffeescript.org/) have been staggering (and wrought by confusion and competition). The amount of new tools that have come out of the woodwork and required your *immediate attention* has been overwhelming.</p><blockquote class='pull-quote'>For our current project we have deployed to production just over 2000 times in the past 7 months.</blockquote>
+<p>I joined Lonely Planet in January 2012 and the list of tools/libraries that I&#8217;ve been introduced to over the last year is chock full of names that would have baffled me before. If I were to list those which we use day-to-day at work it would include: <a href='https://github.com/etsy/statsd'>StatsD</a>, <a href='http://graphite.wikidot.com/'>Graphite</a>, <a href='https://github.com/paperlesspost/graphiti'>Graphiti</a>, <a href='http://logstash.net/'>LogStash</a>, <a href='http://www.elasticsearch.org/'>Elastic Search</a>, <a href='http://www.akamai.com'>Akamai</a>, <a href='https://github.com/lonelyplanet/fozzie'>Fozzie</a>, <a href='http://nodejs.org/'>Node</a>, <a href='http://expressjs.com/'>Express</a>, <a href='https://github.com/guard/guard'>Guard</a>, <a href='https://github.com/documentcloud/jammit'>Jammit</a>, <a href='http://requirejs.org/'>RequireJS</a>, <a href='https://github.com/lautis/uglifier'>Uglifier</a>, <a href='http://gruntjs.com/'>Grunt</a>, <a href='http://www.postgresql.org/'>Postgres</a>, <a href='http://rubyonrails.org/'>Rails</a>, <a href='http://wiki.nginx.org/Main'>Nginx</a>, <a href='http://newrelic.com/'>New Relic</a>, <a href='http://www.nagios.org/'>Nagios</a>, <a href='http://www.pagerduty.com/'>PagerDuty</a>, <a href='http://www.opscode.com/chef/'>Chef</a>, <a href='http://wiki.opscode.com/display/chef/Knife'>Knife</a>, <a href='http://aws.amazon.com/'>AWS suite</a>, <a href='http://www.browserstack.com/'>BrowserStack</a>, <a href='http://bem.info/method/'>BEM</a>, <a href='http://sass-lang.com/'>Sass</a>, <a href='http://haml.info/'>Haml</a>, <a href='http://coffeescript.org/'>Coffeescript</a>&#8230; and many more. The list goes on, and I&#8217;ve forgotten plenty. Exhausting right?</p>
+
+<p>But it hasn&#8217;t just been the tools that have taken prescience, new channels of focus have evolved for me outside of the traditional Big Three of Front End Development. The main areas I&#8217;ve been involved with as a result of my work at <a href='http://www.lonelyplanet.com/vietnam/ho-chi-minh-city/hotels'>Lonely Planet</a> have been Performance, Preprocessors and Rails, Continuous Deployment and BDD.</p>
+
+<h2 id='performance'>Performance</h2>
+
+<p>If I&#8217;m being super critical, my knowledge around performance pre 2012 was limited to caching jQuery selectors and following the <a href='http://developer.yahoo.com/yslow/'>YSlow</a> guidelines. If I were to give myself a break though these guidelines are more than enough for an average Joe website. Getting to understand, implement and refine the key concepts behind Lonely Planet&#8217;s concept of <a href='http://www.slideshare.net/mbjenn/performance-and-metrics-at-lonely-planet-14589911'>&#8216;Screamingly Fast&#8217;</a> has been a real eye opener and shaving off the milliseconds has become a new form of addiction.</p>
+
+<p>Performance has been something we live and breathe at LP and we discuss, demo and practise it constantly. We&#8217;ve also got a long way to go to get to where we need to be. Our monitoring is good (mostly due to <a href='https://github.com/lonelyplanet/fozzie'>Fozzie</a>) but still has a long way to go on the front end. Our reporting and alerting needs to be vastly improved and these are important challenges for 2013.</p>
+
+<h2 id='preprocessors_and_rails'>Preprocessors and Rails</h2>
+
+<p>The fact that I hadn&#8217;t written a line of Sass prior to 2012 amazes me. The same applies to both Haml and CoffeeScript only to lesser degrees.</p>
+
+<p>I&#8217;ve had my ups and downs with CoffeeScript. At first it was fascinating because it was something new to learn, then infuriating because I couldn&#8217;t write valid CoffeeScript for JavaScript I could have written. Next up came the understanding and the enjoyment it could give, the ease and speed at which you could write and the simplicity of stripping out the verbose syntax. Then more infuriation, as I began to get sloppy with real JavaScript and forgot to reintroduce the verbose syntax. Now, fortunately, I am in somewhat of a take it or leave it position though if I have a choice I tend to write CoffeeScript.</p>
+
+<p>Sass is a God send and something that frustrates me if I don&#8217;t have access to (thankfully a rare occurrence). Crafting a CSS architecture using Sass has been a learning curve though and it&#8217;s one that I, and I suspect everyone else, is still on.</p>
+
+<p>Haml just makes sense. <a href='http://slim-lang.com/'>Slim</a> makes even more sense.</p>
+
+<p>There are other aspects of rails that I&#8217;ve enjoyed learning. Understanding the <a href='http://guides.rubyonrails.org/asset_pipeline.html'>asset pipeline</a>, the presenter layer, creating gems for our CSS and JS assets and using guard to do more or less everything, to name a few, have all been new challenges. Learning to write Ruby has been particularly enjoyable.</p>
+
+<h2 id='continuous_deployment'>Continuous Deployment</h2>
+
+<p>Previous to 2012 I&#8217;d worked in an agile environment where we deployed to production at the end of each sprint (1 or 2 weeks). This was after a deploy to a staging environment and a stint of QA. I wasn&#8217;t involved in the build process and my involvement ended after my code was tested and proven to be working.</p>
+
+<p>For our current project we have deployed to production just over 2000 times in the past 7 months and I&#8217;ve been involved throughout. That&#8217;s quite a difference, not only from a cultural perspective but also from an architectural one. We don&#8217;t have any QAs on the project and we&#8217;ve never rolled back a deploy. We&#8217;ve broken things, sure, but we&#8217;ve put ourselves in a position to quickly fix and iterate on them.</p>
+
+<p>It&#8217;s fair to say I was late to the party on this. John Allspaw&#8217;s groundbreaking <a href='http://www.slideshare.net/jallspaw/10-deploys-per-day-dev-and-ops-cooperation-at-flickr'>10 deploys a day</a> talk was way back in 2009 and many companies have been practising this technique since then. I&#8217;m glad to be at the party though :)</p>
+
+<p>The architecture is built around <a href='http://www.opscode.com/chef/'>Chef</a>, the tool from the guys at <a href='http://www.opscode.com/'>Opscode</a>, and we use <a href='http://aws.amazon.com/ec2/'>ec2</a> instances to host our code with a load balancer in place to allow us to run AB tests.</p>
+
+<p>One of the tools that I&#8217;ve been super impressed with is <a href='http://wiki.opscode.com/display/chef/Knife'>Knife</a> (Opscode again). It&#8217;s a command line tool for interacting and configuring with your cloud based instances. The main benefit for me has been its ability to automatically SSH into multiple remote instances and run commands. So say, for example, we have three different versions of our project running on separate instances (an AB test and a canary build for example) and I&#8217;ve updated each of the git repos with a minor copy change or bumped a gem; I could run one CLI command using knife which would search all instances for those related to our projects, SSH into each of them and run a sudo command to pull the latest code from the repo and then rebuild the instance. A massive time saver and a very cool piece of kit.</p>
+
+<p>The other, non technical, side of Continuous Experimentation and AB testing has been a reintroduction to Statistics (something I hadn&#8217;t touched since A-Level maths!) around AB testing. I&#8217;ve learnt things like understanding the volumes required to gain statistical confidence in the result of your AB test, the learnings we can take from the full histogram and when to ignore certain statistical findings.</p>
+
+<h2 id='bdd'>BDD</h2>
+
+<p>Tests are those things that back end devs write, right? Bang goes that attitude in 2012 and it&#8217;s surprising we got away with it for so long on the Front.</p>
+
+<p>On our current project we have ~1000 unit and integration steps. This provides a lot of comfort when you&#8217;re making changes that will go live without QA and provides me with a certain amount of anxiety when I realise our coverage is slipping. This is a huge culture shift in itself but even more so that on the front end we are now using Behaviour and Test Driven Development techniques that have long escaped us.</p>
+
+<p>At first the inconvenience of course outweighed the &#8216;best practice&#8217; but it only takes one bug to slip through for that attitude to change. BDD for me has been an attitude shift in that it allows me to effectively write the blueprint for my code before building and ensures it will be focused and decoupled.</p>
+
+<p>This is another area I will definitely look to improve on during 2013.</p>
+
+<h2 id='what_havent_i_learned_what_have_i_missed_out_on'>What haven&#8217;t I learned, what have I missed out on?</h2>
+
+<p>I&#8217;ve done next to no work on anything responsive and in fact my exposure has been limited to this blog and a couple of microsites. In some ways I think this is a shame because it&#8217;s a challenging and fascinating area. This is likely something that will become more important for us in 2013.</p>
+
+<p>I haven&#8217;t worked with any of the fancy new JS frameworks like <a href='http://backbonejs.org/'>Backbone</a>, <a href='http://emberjs.com/'>Ember</a> or <a href='http://angularjs.org/'>Angular</a>. Our project toes the line between website and webapp and we made a decision to build without a framework early on. I&#8217;m eager to get involved with these, so a side-project in the new year will likely be built using one of these new technologies.</p>
+
+<h2 id='whats_next_for_2013'>What&#8217;s next for 2013?</h2>
+
+<p>Who knows? It&#8217;s going to be an interesting one. I don&#8217;t expect it to be quite as intense as the last one in regards to the amount of new technologies but really I have no idea. It&#8217;s guaranteed to be an exciting one.</p>
+
+<p>I&#8217;m looking forward to doing <a href='http://pragprog.com/book/btlang/seven-languages-in-seven-weeks'>&#8216;Seven Languages in Seven Weeks&#8217;</a> with the guys at work and I&#8217;ve had an inkling for some time to have a play with <a href='https://github.com/clojure/clojurescript'>ClojureScript</a>. I also have a huge list of things to learn which I have been eager to get round to for a while, things like: <a href='http://www.w3.org/TR/css3-flexbox/'>FlexBox</a>, <a href='http://gruntjs.com/'>Grunt</a>, <a href='https://github.com/mozilla/x-tag'>X-Tag</a>, <a href='http://www.webrtc.org/'>Web-RTC</a>&#8230;</p>
+
+<p>Other than that, I think it&#8217;s going to be more of the same and hopefully a deeper knowledge of each aspect. We&#8217;ve got a long way to go to get our setup exactly how we want it but I look forward to us never quite getting there and always pushing for more.</p></div>
+  
+  
+
+
+    </article>
   
   
     <article class="blog-post">
@@ -114,7 +215,7 @@
   
 
 
-<time datetime="2012-07-30 13:51:00 +0100" pubdate data-updated="true">Written for the <a href='http://devops.lonelyplanet.com/oosass'>Lonely Planet DevOps blog</a> on 30 July 2012</time>
+<time datetime="2012-07-30 13:51:00 -0700" pubdate data-updated="true">Written for the <a href='http://devops.lonelyplanet.com/oosass'>Lonely Planet DevOps blog</a> on 30 July 2012</time>
         
       </p>
     
@@ -241,7 +342,7 @@
   
 
 
-<time datetime="2012-06-04 15:17:00 +0100" pubdate data-updated="true">Written whilst drunk on 04 June 2012</time>
+<time datetime="2012-06-04 15:17:00 -0700" pubdate data-updated="true">Written whilst drunk on 04 June 2012</time>
         
       </p>
     
@@ -264,80 +365,6 @@
 
     </article>
   
-  
-    <article class="blog-post">
-      
-
-  <header>
-    <hgroup class="blog-headings">
-      
-        <h1 class="blog-title"><a href="/hangover-hack-result/">Hangover Hack Result</a></h1>
-        
-      
-    </hgroup>
-    
-      <p class="post-date">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-24 15:17:00 +0000" pubdate data-updated="true">Written  on 24 March 2012</time>
-        
-      </p>
-    
-    
-  </header>
-
-
-
-
-  <div><ul>
-<li><a class='btn btn-external btn-photo' href='http://ianfeather.co.uk/playground/image-play/'>Use the app</a></li>
-<li><a class='btn btn-external btn-github' href='https://github.com/Ianfeather/image-play'>View the source code</a></li>
-</ul>
-<p>Last Saturday, in a canyon of a hangover, I decided to <a href='http://ianfeather.co.uk/hangover-hack/'>ditch my client work and just make something fun</a>. I&#8217;d encourage others to do the same. Maybe not <I>in favour</I> of client work but do try and make some time just to play around, experiment and recapture that feeling of why you first got enraptured by the web.</p>
-<blockquote class='pull-quote'>It's fun to just mess about with code like no one is watching. That was the real lesson.</blockquote>
-<p>I gave myself a few guidelines:</p>
-
-<ul>
-<li>Not to get wrapped up in best practices</li>
-
-<li>Chose speed of development over maintainability. In fact, ignore maintainability.</li>
-
-<li>First thought, best thought.</li>
-</ul>
-
-<p>The last is one I borrowed from Jack Kerouac. I didn&#8217;t know what I was going to build and so it made sense to make the outcome an organic production of my erratic, pickled in alcohol, thought process.</p>
-
-<p>I wanted to build something involving images so I dragged out an old chunk of code from a previous project and tapped into the Flickr api. I liked the idea of being able to build a grid of photos based on some parameters. Maybe based on recent keywords from a twitter stream or using geolocation. I started out with just a search box and a lazy grid built of four columns with a ragged y endpoint. A cheat of a solution but I was determined to cheat where possible: I wanted quick development and iteration.</p>
-
-<p>Once I had the gallery mode working on search I got distracted by the idea of using filters to see if you could create instagram like photos with CSS. I could have used a js library but had heard that chrome canary had introduced support for CSS filters so I fired it up and built a little webkit only control panel, a grin on my face from the anarchic approach I was taking in light of recent industry dialogue on the matter.</p>
-
-<h2 id='what_i_learned'>What I learned?</h2>
-
-<p>It&#8217;s fun to just mess about with code like no one is watching. That was the real lesson.</p>
-
-<h2 id='what_improvements_would_i_make'>What improvements would I make?</h2>
-
-<p>It took around 6 hours to make, although I split that time with 6 nations rugby, but if I had had more time I&#8217;d build in instagram support and add the ability to switch back and forth between the two modes more easily.</p>
-
-<p>Maybe I&#8217;ll add that in the future but it&#8217;s more likely I&#8217;ll just build something new. Either way, in the future, I&#8217;ll definitely be building something just for the sake of it.</p>
-
-<p><a href='http://ianfeather.co.uk/playground/image-play'>Play around with the end result</a></p></div>
-  
-  
-
-
-    </article>
-  
 </div>
 
 
@@ -347,26 +374,26 @@
               <ul id="js-recent-posts">
                 
                   <li class="post">
-                    <a href="/personal-site/should-the-nav-element-be-sectioning-content/">Should the nav element be sectioning content?</a>
+                    <a href="/web-fonts-and-the-critical-path/">Web Fonts and the Critical Path</a>
                   </li>
                 
                   <li class="post">
-                    <a href="/personal-site/configure-requirejs-to-serve-two-files/">Configure requirejs to serve two files</a>
+                    <a href="/should-the-nav-element-be-sectioning-content/">Should the nav element be sectioning content?</a>
                   </li>
                 
                   <li class="post">
-                    <a href="/personal-site/tools-and-cultural-shifts-of-2012/">Tools and Cultural Shifts of 2012</a>
+                    <a href="/configure-requirejs-to-serve-two-files/">Configure requirejs to serve two files</a>
                   </li>
                 
                   <li class="post">
-                    <a href="/personal-site/object-oriented-sass/">Object Oriented Sass</a>
+                    <a href="/tools-and-cultural-shifts-of-2012/">Tools and Cultural Shifts of 2012</a>
                   </li>
                 
                   <li class="post">
-                    <a href="/personal-site/the-neglected-medium-can-we-replicate-creative-communication-online/">The Neglected Medium</a>
+                    <a href="/object-oriented-sass/">Object Oriented Sass</a>
                   </li>
                 
-                <li class="view-all-posts"><a href="/personal-site/blog/archives">View all</a></li>
+                <li class="view-all-posts"><a href="/blog/archives">View all</a></li>
               </ul>
             </section>
             
@@ -379,7 +406,7 @@
     <!-- <section class="back">test</section> -->
 
     <footer class="main-footer" role="contentinfo"><p>
-  Copyright &copy; 2013 - Ian Feather -
+  Copyright &copy; 2013 - Ian Feather
 </p>
 <div class="is-hidden" id="js-svg-sprite" data-classname="ext-sprite">
   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -464,7 +491,7 @@
   	c13.423,0,20.763-11.12,20.763-20.763c0-0.316-0.007-0.631-0.021-0.944C42.207,55.356,43.444,54.071,44.423,52.608z"/>
   </svg>
 </div>
-<script src="/personal-site/javascripts/ianf.js" ></script>
+<script src="/javascripts/ianf.js" ></script>
 </footer>
 
 

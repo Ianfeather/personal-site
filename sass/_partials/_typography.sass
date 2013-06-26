@@ -1,5 +1,5 @@
 html
-  font: 1em/1.5 Georgia, serif 
+  font: 1em/1.5 Palatino, Georgia, serif 
 
 body
   min-height: 100%
@@ -7,6 +7,8 @@ body
   word-wrap: break-word
   @extend %extra-large-type
   -webkit-font-smoothing: antialiased
+  .wf-loading &
+    +font-size(18)
 p
   @extend %margin-bottom-small
   +hyphens()
@@ -39,3 +41,5 @@ pre, code
 pre
   margin: 1em 0 2em
   word-wrap: normal
+
+  

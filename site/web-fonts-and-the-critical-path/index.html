@@ -5,16 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Ian Feather</title>
+  <title>Web Fonts and the Critical Path - Ian Feather</title>
   <meta name="author" content="Ian Feather">
 
   
   <meta name="description" content="
   
-  
-  
-    
-      
 
   
     
@@ -37,7 +33,7 @@
   
 
 
-Written on a p...">
+Written on a plane to Velocity C...">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -46,7 +42,7 @@ Written on a p...">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://Ianfeather.github.com/ianfeatherV3/">
+  <link rel="canonical" href="http://Ianfeather.github.com/ianfeatherV3/web-fonts-and-the-critical-path/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script type="text/javascript">
@@ -96,17 +92,13 @@ Written on a p...">
   </div>
 </div></header>
 
-        <div class="blog-index blog-area">
+        <article class="blog-area blog-post" role="article">
   
-  
-  
-    <article class="blog-post">
-      
 
   <header>
     <hgroup class="blog-headings">
       
-        <h1 class="blog-title"><a href="/web-fonts-and-the-critical-path/">Web Fonts and the Critical Path</a></h1>
+        <h1 class="blog-title">Web Fonts and the Critical Path</h1>
         
       
     </hgroup>
@@ -134,7 +126,7 @@ Written on a p...">
 
 
 
-  <div><p>This blog corresponds to my May 2013 talk <a href='http://twitter.com/frontendlondon'>@frontendlondon</a>. The slides for that talk can be found on <a href='http://www.slideshare.net/ianfeather/fel-presentation'>slideshare</a>.</p>
+<div><p>This blog corresponds to my May 2013 talk <a href='http://twitter.com/frontendlondon'>@frontendlondon</a>. The slides for that talk can be found on <a href='http://www.slideshare.net/ianfeather/fel-presentation'>slideshare</a>.</p>
 
 <h2 id='the_story_behind_fout'>The story behind FOUT</h2>
 
@@ -328,224 +320,10 @@ Written on a p...">
 <p>Progressive enhancement for web fonts does not need to be limited to performance issues either. There are other features we could be testing upon to determine whether or not to serve fonts: sub-pixel font rendering support, for example.</p>
 
 <p>I would always favour a solution which leverages the browser where possible. Despite this, for the moment, if you want to control this part of your website&#8217;s performance you are going to have to work around the browser. Hopefully in the future we will have the ability to make better judgements using native capabilities, in the meantime we need to take a more thoughtful approach to including fonts on our web pages.</p></div>
-  
-  
 
 
-    </article>
-  
-  
-    <article class="blog-post">
-      
+</article>
 
-  <header>
-    <hgroup class="blog-headings">
-      
-        <h1 class="blog-title"><a href="/should-the-nav-element-be-sectioning-content/">Should the nav element be sectioning content?</a></h1>
-        
-      
-    </hgroup>
-    
-      <p class="post-date">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-01 08:52:00 -0700" pubdate data-updated="true">Written  on 01 May 2013</time>
-        
-      </p>
-    
-    
-  </header>
-
-
-
-
-  <div><p>Recently we&#8217;ve been nurturing the document outlines at Lonely Planet to create a simpler snapshot of the page for both accessibility and SEO reasons. One thing I was surprised about is how the <em>nav</em> element creates a new section in the document outline.</p>
-
-<p>Sectioning content requires a heading or it will appear in the document outline as &#8220;untitled&#8221;.</p>
-<div class='blog-grid'>
-  <div class='column'>
-    <h3>bostonglobe.com</h3>
-    <img src='/images/boston-globe-outline.png' />
-  </div>
-  <div class='column'>
-    <h3>smashingmagazine.com</h3>
-    <img src='/images/smashing-magazine-outline.png' />
-  </div>
-</div>
-<p>How often do you code up a navigational section with a heading? More often than not the elements and their position on the page is self-documenting. And do you even want your navigation to be part of the document outline at all?</p>
-
-<p>It is worth noting at this point that VoiceOver (I haven&#8217;t tested other screen readers) will not read out &#8216;Untitled nav&#8217; and will just honour the links within. Also, not all html5 elements create a new sectioning context. <em>footer</em>, for example, does not.</p>
-
-<h2 id='decision_time'>Decision time</h2>
-
-<p>This leaves you with a few options for marking up your navigation:</p>
-
-<ul>
-<li>A non html5 element. Using a <em>div</em> or a <em>ul</em> will not affect the document outline.</li>
-
-<li>A non html5 element with an aria navigation role. Maybe the best of both worlds but at the expense of not following the latest specs.</li>
-
-<li><em>nav</em> with a heading. If you want to use the more semantic <em>nav</em> you could use a heading within, which will title your navigation in the outline. If it doesn&#8217;t fit your design you can always visually hide it. If you&#8217;re doing this though, should you need to be jumping through these hoops?</li>
-
-<li><em>nav</em> - Just live with having untitled navigation</li>
-</ul>
-
-<p>Which do you think is currently the most practical? More importantly, is the spec serving the majority of use cases with <em>nav</em> being sectioning content?</p>
-
-<h3 id='handy_resources'>Handy resources</h3>
-
-<ul>
-<li><a href='http://html5doctor.com/outlines/'>http://html5doctor.com/outlines/</a></li>
-
-<li><a href='http://coding.smashingmagazine.com/2011/08/16/html5-and-the-document-outlining-algorithm/'>http://coding.smashingmagazine.com/2011/08/16/html5-and-the-document-outlining-algorithm/</a></li>
-</ul></div>
-  
-  
-
-
-    </article>
-  
-  
-    <article class="blog-post">
-      
-
-  <header>
-    <hgroup class="blog-headings">
-      
-        <h1 class="blog-title"><a href="/configure-requirejs-to-serve-two-files/">Configure requirejs to serve two files</a></h1>
-        
-      
-    </hgroup>
-    
-      <p class="post-date">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-30 09:35:00 -0700" pubdate data-updated="true">Written on the Victoria line on 30 April 2013</time>
-        
-      </p>
-    
-    
-  </header>
-
-
-
-
-  <div><h2 id='the_reason'>The reason</h2>
-
-<p>Why would you want to serve two javascript files rather than concatenating them? If you want to leverage better caching of assets which are rarely updated.</p>
-
-<p>At <a href='http://www.lonelyplanet.com/england/london/hotels'>Lonely Planet</a> our files are broken up into:</p>
-
-<ul>
-<li>core.js - Common libs and abstractions(eg. jquery), header and footer code, analytics&lt;/li&gt;</li>
-
-<li>application.js - The code responsible for everything between the header and footer&lt;/li&gt;</li>
-</ul>
-
-<p>Core.js is likely to never change so we want any repeat users to enjoy the benefit of strong browser caching. We serve this script appended with an MD5 hash so that we can invalidate the cache when it does finally get updated.</p>
-
-<h2 id='the_background'>The background</h2>
-
-<p>We use the requirejs-rails port which includes the r.js optimiser. It does an awesome job of consolidating all your modules into one file which you load asynchronously using the requirejs script tag and a data-main attribute. The main focus seems to be web apps rather than traditional web sites and as a consequence there were very few resources available around the topic of serving more than one file.</p>
-
-<p>We wanted to use core.js to initialise the rest of the application once it had satisfied its own dependencies. The reason behind this was that core.js would then load jQuery before it was subsequently requested by application.js.</p>
-
-<p>After much playing around with the requirejs config it was clear this was the wrong approach. We were getting multiple files requested dynamically and it was becoming a headache. I knew there would be a simple solution and really it was just a matter of looking at it from the application side: core.js was really a dependency of application.js</p>
-
-<h2 id='the_halfsolution'>The half-solution</h2>
-
-<h3 id='requirejs_config'>require.js config:</h3>
-<pre><code class='language-bash'>modules:
-  - name: 'application'
-    exclude: ['core']
-</code></pre>
-<h3 id='applicationjscoffee'>application.js.coffee:</h3>
-<pre><code class='language-coffeescript'>require ['core', 'lib/application'], (Core, Application) ->
-  Application = new Application()
-</code></pre>
-<p>Why this didn&#8217;t work? Application.js had dependencies which themselves depended on jQuery. Require loaded core and lib/application at the same time leading to three scripts being loaded by requirejs:</p>
-
-<ul>
-<li>core.js</li>
-
-<li>application.js</li>
-
-<li>jquery.js</li>
-</ul>
-
-<p>Not bad, but we have an extra request to load jQuery when really we wanted it to be included in core.js</p>
-
-<h2 id='the_actual_solution'>The actual solution</h2>
-
-<h3 id='requirejs_config'>require.js config:</h3>
-<pre><code class='language-bash'>modules:
-  - name: 'appplication'
-    exclude: ['core']
-
-findNestedDependencies: true
-</code></pre>
-<h3 id='applicationjscoffee'>application.js.coffee:</h3>
-<pre>
-<code class='language-coffeescript'>require ['core'], () ->
-  require ['jquery', 'lib/application'], ($, Application)->
-    $ ->
-      application = new Application()
-</code>
-</pre>
-<h3 id='output'>Output:</h3>
-
-<ul>
-<li>core.js</li>
-
-<li>application.js</li>
-</ul>
-
-<p>Running r.js will optimise core.js separately from application.js. Once it executes, the process will happen like this:</p>
-
-<ul>
-<li>Try to find core.js</li>
-
-<li>We don&#39;t have it bundled so load the optimised core.js dynamically</li>
-
-<li>Once core.js is loaded we move into the require function</li>
-
-<li>Try to find jQuery. Requirejs knows it is already loaded.</li>
-
-<li>Try to find lib/application.js. This is bundled into application.js from the r.js optimisation step.</li>
-
-<li>Move into the nested require function</li>
-
-<li>Initialise application()</li>
-</ul>
-
-<p>That&#39;s all there is to it. We can now specify any rarely used modules as a dependency of core.js, leverage the browser cache, and make faster websites.</p></div>
-  
-  
-
-
-    </article>
-  
-</div>
 
 
           <aside class="sidebar">

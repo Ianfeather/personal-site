@@ -1,6 +1,9 @@
 table
   @extend %margin-bottom-small
   width: 100%
+  tr
+    border-collapse: separate
+    border-spacing: 0 10px
   +at(max580)
     .table-header
       display: none
@@ -13,6 +16,7 @@ table
     .val
       display: table-row
       text-align: left !important
+      margin-bottom: 10px
       &:before
         display: table-cell
         padding-right: 1rem
@@ -21,9 +25,15 @@ table
         min-width: 80px
 
 th
-  font-weight: normal
+  font-weight: bold
   color: $maroon
+  .table--left &
+    text-align: left
+
 .val
   text-align: center
+  .table--left &
+    text-align: left
 
-
+.cell--inner
+  width: 85%
